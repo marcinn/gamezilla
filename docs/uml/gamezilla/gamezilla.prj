@@ -1,7 +1,7 @@
 format 75
 "gamezilla"
-  revision 3
-  modified_by 2 "wooden"
+  revision 4
+  modified_by 99 "marcin"
 
 
   
@@ -38,7 +38,13 @@ format 75
 
   mark_for_import
   
+  ncouples 1
+  key "html dir" value "/home/marcin/src/projekty/gamezilla/docs/generated/"
   package_ref 128002 // client
 
   package_ref 128130 // portal
+
+  package_ref 128099 // games
+
+  package_ref 128227 // django
 end

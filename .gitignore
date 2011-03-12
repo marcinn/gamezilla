@@ -1,8 +1,9 @@
-.pyc
-.pyo
-.lock
+*.pyc
+*.pyo
+*.lock
 .env
-
+*.swp
+*.session
 
 /src/zillaportal/eggs
 /src/zillaportal/bin
