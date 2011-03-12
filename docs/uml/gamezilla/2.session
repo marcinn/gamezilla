@@ -1,0 +1,17 @@
+window_sizes 1350 787 337 1003 583 120
+diagrams
+  usecasediagram_ref 128002 // gra
+    802 466 100 4 184 0
+  classdiagram_ref 128258 // erd
+    802 466 100 4 0 0
+  active  usecasediagram_ref 134786 // Komunikacja
+    802 466 100 4 0 0
+end
+show_stereotypes
+selected class_ref 128002 // Gracz
+open
+  usecaseview_ref 128002 // Gracz
+  usecaseview_ref 134658 // Interfejs
+  classview_ref 128002 // class
+end
+end
