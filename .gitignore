@@ -1,5 +1,8 @@
 .pyc
 .pyo
 .lock
-/env/
+.env
 
+
+/src/zillaportal/eggs
+/src/zillaportal/bin
