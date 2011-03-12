@@ -1,0 +1,24 @@
+format 75
+
+usecasecanvas 128002 usecase_ref 129282 // Wyslij informacje o wyjsciu
+  xyzwh 529.5 148.5 3005 64 32 label_xy 489.5 180.5
+end
+classcanvas 128130 class_ref 128258 // Klient
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 169.5 151.5 2000
+end
+usecasecanvas 128258 usecase_ref 128770 // Wyslij informacje do serwera
+  xyzwh 303.5 166.5 3005 64 32 label_xy 258.5 198.5
+end
+usecasecanvas 128386 usecase_ref 128898 // Wyslij ruch
+  xyzwh 478.5 86.5 3005 64 32 label_xy 480.5 118.5
+end
+line 128514 ---- decenter_begin 698
+  from ref 128130 z 3006 to ref 128258
+simplerelationcanvas 128642 simplerelation_ref 128258
+  from ref 128002 z 3006 to ref 128258
+end
+simplerelationcanvas 128770 simplerelation_ref 128130
+  from ref 128386 z 3006 to ref 128258
+end
+end
