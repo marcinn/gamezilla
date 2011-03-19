@@ -9,3 +9,5 @@
 /src/zillaportal/bin
 
 /docs/uml/bouml/gamezilla/gamezilla/*.d
+
+/src/zillaclient/output
