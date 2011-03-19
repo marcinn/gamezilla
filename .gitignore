@@ -7,3 +7,5 @@
 
 /src/zillaportal/eggs
 /src/zillaportal/bin
+
+/docs/uml/bouml/gamezilla/gamezilla/*.d
