@@ -21,17 +21,6 @@ class  MainWindow (FocusPanel, ZillaWindow):
         ZillaWindow.__init__(self, kwargs)
         FocusPanel.__init__(self, kwargs)
 
-        hpanel1 = HorizontalPanel()
-
-        # menu bar
-        main_menu = MenuBar()
-        hpanel1.add(main_menu_bar)
-
-        label1 = Label()
-        label1.setText("LOL")
-
-        main_menu.add(label1)
-
         area1 = TextArea()
         area1.setText("Zakładka 1")
 
@@ -46,9 +35,7 @@ class  MainWindow (FocusPanel, ZillaWindow):
         tabs.add(area1, tabText="Pokój gier")
         tabs.add(area3, tabText="Pokój gier")
 
-        hpanel1.add(tabs)
-
-        self.add (hpanel1)
+        self.add (tabs)
 
 
     def get_open_games(self):
