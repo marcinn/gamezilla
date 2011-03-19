@@ -1,0 +1,59 @@
+format 75
+
+classcanvas 128002 class_ref 128386 // User
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 81 97 2000
+end
+classcanvas 128130 class_ref 128514 // Ranking
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 643 341 2000
+end
+classcanvas 128258 class_ref 128642 // Profile
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 90 336 2000
+end
+classcanvas 128514 class_ref 128770 // Gameplay
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 385 112 2000
+end
+classcanvas 130019 class_ref 128355 // Game
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 602 95 3005
+end
+relationcanvas 128386 relation_ref 128002 // <association>
+  decenter_end 448
+  from ref 128002 z 2001 to ref 128258
+  no_role_a no_role_b
+  multiplicity_a_pos 115 317 3000 multiplicity_b_pos 115 276 3000
+end
+relationcanvas 128867 relation_ref 128483 // friendship
+  decenter_begin 787
+  decenter_end 191
+  from ref 128002 z 2001 label "friendship" italic xyz 104 21 2001 to point 156 41
+  line 128995 z 2001 to point 97 41
+  line 129123 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129379 relation_ref 128611 // <directional aggregation>
+  from ref 128002 z 2001 to point 360 362
+  line 129507 z 2001 to ref 128130
+  role_a_pos 594 346 3000 no_role_b
+  multiplicity_a_pos 627 371 3000 multiplicity_b_pos 189 235 3000
+end
+relationcanvas 130147 relation_ref 128739 // <directional aggregation>
+  from ref 130019 z 3006 to ref 128130
+  role_a_pos 682 322 3000 no_role_b
+  multiplicity_a_pos 657 322 3000 multiplicity_b_pos 655 274 3000
+end
+relationcanvas 130275 relation_ref 128995 // <composition>
+  from ref 130019 z 3006 to ref 128514
+  role_a_pos 469 163 3000 role_b_pos 559 163 3000
+  multiplicity_a_pos 469 188 3000 multiplicity_b_pos 584 188 3000
+end
+relationcanvas 130403 relation_ref 128867 // <aggregation>
+  from ref 128002 z 2001 to ref 128514
+  role_a_pos 296 164 3000 role_b_pos 189 164 3000
+  multiplicity_a_pos 354 189 3000 multiplicity_b_pos 189 189 3000
+end
+end
