@@ -46,14 +46,5 @@ relationcanvas 129763 relation_ref 128867 // <aggregation>
   role_a_pos 296 164 3000 role_b_pos 189 164 3000
   multiplicity_a_pos 354 189 3000 multiplicity_b_pos 189 189 3000
 end
-relationcanvas 130147 relation_ref 128995 // <composition>
-  from ref 130019 z 3006 to ref 128514
-  role_a_pos 469 163 3000 role_b_pos 559 163 3000
-  multiplicity_a_pos 469 188 3000 multiplicity_b_pos 584 188 3000
-end
-relationcanvas 130275 relation_ref 128739 // <directional aggregation>
-  from ref 130019 z 3006 to ref 128130
-  role_a_pos 682 322 3000 no_role_b
-  multiplicity_a_pos 657 322 3000 multiplicity_b_pos 655 274 3000
 end
 end

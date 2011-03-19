@@ -1,6 +1,6 @@
 format 75
 "gamescatalog" // portal::gamescatalog
-  revision 1
+  revision 3
   modified_by 99 "marcin"
   // class settings
   //class diagram settings
@@ -59,7 +59,7 @@ ${docstring}${members}
       explicit_switch_type ""
       
       attribute 128995 "screenshot"
-	private explicit_type ""
+	private type class_ref 135523 // ImageField
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
@@ -71,7 +71,7 @@ ${docstring}${members}
       end
 
       attribute 128867 "title"
-	private explicit_type ""
+	private type class_ref 135651 // CharField
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
@@ -83,7 +83,7 @@ ${docstring}${members}
       end
 
       attribute 129123 "games_count"
-	private explicit_type ""
+	private type class_ref 136163 // IntegerField
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
@@ -95,7 +95,7 @@ ${docstring}${members}
       end
 
       attribute 129251 "description"
-	private explicit_type ""
+	private type class_ref 136035 // TextField
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
@@ -107,7 +107,7 @@ ${docstring}${members}
       end
 
       attribute 130147 "client"
-	private explicit_type "string"
+	private type class_ref 135395 // URLField
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
@@ -120,7 +120,7 @@ ${docstring}${members}
       end
 
       attribute 130275 "gameserver"
-	private explicit_type "string"
+	private type class_ref 135395 // URLField
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
@@ -163,6 +163,65 @@ ${docstring}${members}
 	    python "${comment}${self}${name} = ${type}()
 "
 	    classrelation_ref 129891 // game (<composition>)
+      end
+
+      classrelation 136419 // <generalisation>
+	relation 135523 ---|>
+	  a public
+	    cpp default "${type}"
+	    java "${type}"
+	    python "${type}"
+	    classrelation_ref 136419 // <generalisation>
+	  b parent class_ref 135011 // Model
+      end
+
+      classrelation 136547 // objects (<directional aggregation>)
+	relation 135651 o-->
+	  a role_name "objects" multiplicity "1" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    python "${comment}${self}${name} = ${value}
+"
+	    classrelation_ref 136547 // objects (<directional aggregation>)
+	  b multiplicity "1..*" parent class_ref 135139 // Manager
+      end
+
+      operation 136803 "get_active_gameplays"
+	public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	python_def "${@}${static}${abstract}def ${name}${(}${)}:
+${docstring}${body}
+"
+	
+      end
+
+      operation 136931 "get_top_scores"
+	public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	python_def "${@}${static}${abstract}def ${name}${(}${)}:
+${docstring}${body}
+"
+	
       end
     end
 
@@ -287,6 +346,10 @@ ${docstring}${body}
       end
     end
 
+    sequencediagram 135651 "Browsing game catalog"
+      show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+      overlapping_bars size A4
+    end
   end
 
   classview 128483 "services"

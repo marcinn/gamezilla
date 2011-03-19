@@ -1,6 +1,6 @@
 format 75
 "gamezilla"
-  revision 4
+  revision 5
   modified_by 99 "marcin"
 
 
@@ -44,7 +44,9 @@ format 75
 
   package_ref 128130 // portal
 
-  package_ref 128099 // games
+  package_ref 128099 // gameserver
+
+  package_ref 135267 // architektura
 
   package_ref 128227 // django
 end
