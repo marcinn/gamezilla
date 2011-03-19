@@ -1,6 +1,6 @@
 format 75
 "django" // django
-  revision 1
+  revision 2
   modified_by 99 "marcin"
   // class settings
   //class diagram settings
@@ -27,4 +27,6 @@ format 75
   show_infonote default drawing_language default show_stereotype_properties default
   
   package_ref 128355 // contrib
+
+  package_ref 141795 // db
 end

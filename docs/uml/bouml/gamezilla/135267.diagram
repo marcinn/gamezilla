@@ -1,0 +1,80 @@
+format 75
+
+deploymentnodecanvas 128099 deploymentnode_ref 128099 // AppServer
+  name "zillaportal"
+  xyzwh 441 76 2000 129 32
+end
+deploymentnodecanvas 128355 deploymentnode_ref 128227 // Storage
+  name "postgresql"
+  xyzwh 606 76 2000 123 32
+end
+deploymentnodecanvas 128611 deploymentnode_ref 128355 // Proxy
+  name "nginx"
+  xyzwh 343 291 2000 79 32
+end
+deploymentnodecanvas 128867 deploymentnode_ref 128483 // GameServer
+  name "reversi"
+  xyzwh 172 112 2000 127 32
+end
+deploymentnodecanvas 129123 deploymentnode_ref 128483 // GameServer
+  name "gameN"
+  xyzwh 172 54 2000 131 32
+end
+deploymentnodecanvas 129763 deploymentnode_ref 128611 // Webservice
+  name "gzAPI"
+  xyzwh 172 168 2000 115 32
+end
+packagecanvas 131043 
+  package_ref 128099 // gameserver
+    xyzwh 24 11 2005 315 227
+end
+hubcanvas 131171 xyz 322 106 2000
+deploymentnodecanvas 131939 deploymentnode_ref 128227 // Storage
+  name "ZODB"
+  xyzwh 41 83 2000 97 32
+end
+packagecanvas 132323 
+  package_ref 128739 // gamescatalog
+    xyzwh 426 14 2006 359 225
+end
+deploymentnodecanvas 132451 deploymentnode_ref 128611 // Webservice
+  name "users"
+  xyzwh 609 152 2000 117 32
+end
+deploymentnodecanvas 132963 deploymentnode_ref 128739 // Client
+  name "user1"
+  xyzwh 183 416 2000 85 32
+end
+deploymentnodecanvas 133219 deploymentnode_ref 128739 // Client
+  name "user2"
+  xyzwh 340 417 2000 85 32
+end
+deploymentnodecanvas 133475 deploymentnode_ref 128739 // Client
+  name "userN"
+  xyzwh 507 415 2000 87 32
+end
+line 128483 ----
+  from ref 128099 z 2001 to ref 128355
+line 128739 ----
+  from ref 128611 z 2001 to ref 128099
+line 130403 ----
+  from ref 129763 z 2001 to ref 128611
+line 131299 ----
+  from ref 129123 z 2001 to ref 131171
+line 131683 ----
+  from ref 128099 z 2001 to ref 131171
+line 131811 ----
+  from ref 128867 z 2001 to ref 131171
+line 132067 ----
+  from ref 131939 z 2001 to ref 129123
+line 132195 ----
+  from ref 131939 z 2001 to ref 128867
+line 132835 ----
+  from ref 128611 z 2001 to ref 132451
+line 133091 ----
+  from ref 132963 z 2001 to ref 128611
+line 133347 ----
+  from ref 133219 z 2001 to ref 128611
+line 133603 ----
+  from ref 133475 z 2001 to ref 128611
+end

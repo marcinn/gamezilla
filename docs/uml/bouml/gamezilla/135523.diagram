@@ -1,0 +1,65 @@
+format 75
+
+pseudostatecanvas 128099 pseudostate_ref 128483 // initial
+   xyz 169 36 2000
+end
+pseudostatecanvas 128227 pseudostate_ref 128611 // final
+   xyz 169 392 2000
+end
+statecanvas 128355 state_ref 128867 // Awaiting player
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  xyzwh 126 89 2000 107 33
+end
+statecanvas 128611 state_ref 128995 // Run
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  xyzwh 158 229 2000 43 33
+end
+statecanvas 128739 state_ref 129123 // Finished
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  xyzwh 147 318 2000 67 33
+end
+statecanvas 129635 state_ref 129251 // Timeout
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  xyzwh 360 228 2000 67 33
+end
+transitioncanvas 128483 transition_ref 128867 // <transition>
+  
+  from ref 128099 z 2001 to ref 128355
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 128867 transition_ref 128995 // <transition>
+  decenter_begin 383
+  decenter_end 209
+  
+  from ref 128355 z 2001 to ref 128611
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 129123 transition_ref 129123 // <transition>
+  decenter_begin 790
+  decenter_end 616
+  
+  from ref 128611 z 2001 to ref 128355
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 129379 transition_ref 129251 // <transition>
+  
+  from ref 128611 z 2001 to ref 128739
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 129507 transition_ref 129379 // <transition>
+  
+  from ref 128739 z 2001 to ref 128227
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 129763 transition_ref 129507 // <transition>
+  
+  from ref 128355 z 2001 to point 390 102
+  line 129891 z 2001 to ref 129635
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 130019 transition_ref 129635 // <transition>
+  
+  from ref 128611 z 2001 to ref 129635
+  write_horizontally default show_definition default drawing_language default
+end
+end

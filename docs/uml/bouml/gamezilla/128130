@@ -1,6 +1,6 @@
 format 75
 "portal" // portal
-  revision 4
+  revision 6
   modified_by 99 "marcin"
   // class settings
   //class diagram settings
@@ -46,7 +46,7 @@ format 75
     //activity diagram settings
     package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
     show_infonote default drawing_language default show_stereotype_properties default
-    classdiagram 128258 "erd"
+    classdiagram 128258 "Model logiczny"
       draw_all_relations no hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
       size A4
     end
@@ -80,6 +80,120 @@ ${docstring}${members}
       end
     end
 
+    state 128099 "User"
+      stereotype "machine"
+      statediagram 135395 "User activity"
+	package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+	show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+	size A4
+      end
+
+      pseudostate 128099 initial 
+	transition 128099 "<transition>"
+	  on state_ref 128227 // new
+	  external 
+	end
+      end
+
+      pseudostate 128227 final 
+      end
+
+      state 128227 "new"
+	transition 128227 "<transition>"
+	  on state_ref 128355 // active
+	  external 
+	end
+      end
+
+      state 128355 "active"
+	transition 128355 "<transition>"
+	  on state_ref 128611 // deleted
+	  external 
+	end
+
+	transition 128483 "<transition>"
+	  on state_ref 128483 // blocked
+	  external 
+	end
+      end
+
+      state 128483 "blocked"
+	transition 128611 "<transition>"
+	  on state_ref 128355 // active
+	  external 
+	end
+      end
+
+      state 128611 "deleted"
+	transition 128739 "<transition>"
+	  on pseudostate_ref 128227 // final
+	  external 
+	end
+      end
+    end
+
+    state 128739 "Gameplay"
+      stereotype "machine"
+      statediagram 135523 "Gameplay"
+	package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+	show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+	size A4
+      end
+
+      pseudostate 128483 initial 
+	transition 128867 "<transition>"
+	  on state_ref 128867 // Awaiting player
+	  external 
+	end
+      end
+
+      pseudostate 128611 final 
+      end
+
+      state 128867 "Awaiting player"
+	transition 128995 "<transition>"
+	  on state_ref 128995 // Run
+	  external 
+	end
+
+	transition 129507 "<transition>"
+	  on state_ref 129251 // Timeout
+	  external 
+	end
+      end
+
+      state 128995 "Run"
+	transition 129123 "<transition>"
+	  on state_ref 128867 // Awaiting player
+	  external 
+	end
+
+	transition 129251 "<transition>"
+	  on state_ref 129123 // Finished
+	  external 
+	end
+
+	transition 129635 "<transition>"
+	  on state_ref 129251 // Timeout
+	  external 
+	end
+      end
+
+      state 129123 "Finished"
+	transition 129379 "<transition>"
+	  on pseudostate_ref 128611 // final
+	  external 
+	end
+      end
+
+      state 129251 "Timeout"
+      end
+    end
+
+    classdiagram 142179 "Model fizyczny"
+      draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+      size A4
+    end
   end
 
   usecaseview 128099 "Gracz"
