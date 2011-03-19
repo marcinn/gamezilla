@@ -1,7 +1,7 @@
 format 75
 "auth" // django::contrib::auth
-  revision 1
-  modified_by 99 "marcin"
+  revision 2
+  modified_by 2 "w4rri0r3k"
   // class settings
   //class diagram settings
   draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
@@ -282,7 +282,67 @@ ${docstring}${body}
 "
 	    python "${comment}${self}${name} = ${stereotype}()
 "
-	    classrelation_ref 129635 // player (<aggregation>)
+	    classrelation_ref 129635 // <aggregation>
+      end
+
+      classrelation 135426 // <aggregation>
+	relation 134914 o---
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    python "${comment}${self}${name} = ${value}
+"
+	    classrelation_ref 135426 // <aggregation>
+	  b role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    python "${comment}${self}${name} = ${value}
+"
+	    classrelation_ref 135554 // <aggregation>
+      end
+
+      classrelation 135682 // <aggregation>
+	relation 135042 o---
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    python "${comment}${self}${name} = ${value}
+"
+	    classrelation_ref 135682 // <aggregation>
+	  b role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    python "${comment}${self}${name} = ${value}
+"
+	    classrelation_ref 135810 // <aggregation>
+      end
+
+      classrelation 135938 // <aggregation>
+	relation 135170 o---
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type} *> ${name}${value};
+"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    python "${comment}${self}${name} = ${stereotype}()
+"
+	    classrelation_ref 135938 // <aggregation>
+	  b role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    python "${comment}${self}${name} = ${value}
+"
+	    classrelation_ref 136066 // <aggregation>
       end
     end
   end

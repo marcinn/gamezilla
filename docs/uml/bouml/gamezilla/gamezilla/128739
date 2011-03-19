@@ -344,6 +344,30 @@ ${docstring}${body}
       classrelation 129891 // game (<composition>)
 	relation_ref 128995 // <composition>
       end
+
+      attribute 128002 "owner"
+	private explicit_type ""
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl "${comment}${self}${name} = ${value}
+"
+	idl_decl ""
+      end
+
+      classrelation 135554 // <aggregation>
+	relation_ref 134914 // <aggregation>
+      end
+
+      classrelation 135810 // <aggregation>
+	relation_ref 135042 // <aggregation>
+      end
+
+      classrelation 136066 // <aggregation>
+	relation_ref 135170 // <aggregation>
+      end
     end
 
     sequencediagram 135651 "Browsing game catalog"

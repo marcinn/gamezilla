@@ -24,7 +24,7 @@ relationcanvas 128386 relation_ref 128002 // <association>
   decenter_end 448
   from ref 128002 z 2001 to ref 128258
   no_role_a no_role_b
-  multiplicity_a_pos 115 317 3000 multiplicity_b_pos 115 276 3000
+  multiplicity_a_pos 115 315 3000 multiplicity_b_pos 116 286 3000
 end
 relationcanvas 128867 relation_ref 128483 // friendship
   decenter_begin 787
@@ -39,7 +39,14 @@ relationcanvas 129379 relation_ref 128611 // <directional aggregation>
   from ref 128002 z 2001 to point 360 362
   line 129507 z 2001 to ref 128130
   role_a_pos 594 346 3000 no_role_b
-  multiplicity_a_pos 627 371 3000 multiplicity_b_pos 189 235 3000
+  multiplicity_a_pos 627 371 3000 multiplicity_b_pos 193 241 3000
+end
+relationcanvas 129922 relation_ref 135170 // <aggregation>
+  decenter_begin 633
+  decenter_end 703
+  from ref 128002 z 2001 to ref 128514
+  no_role_a no_role_b
+  multiplicity_a_pos 368 234 3000 multiplicity_b_pos 193 219 3000
 end
 relationcanvas 130147 relation_ref 128739 // <directional aggregation>
   from ref 130019 z 3006 to ref 128130
@@ -48,12 +55,12 @@ relationcanvas 130147 relation_ref 128739 // <directional aggregation>
 end
 relationcanvas 130275 relation_ref 128995 // <composition>
   from ref 130019 z 3006 to ref 128514
-  role_a_pos 483 166 3000 role_b_pos 558 166 3000
-  multiplicity_a_pos 483 193 3000 multiplicity_b_pos 583 193 3000
+  role_a_pos 483 171 3000 role_b_pos 558 168 3000
+  multiplicity_a_pos 483 198 3000 multiplicity_b_pos 583 195 3000
 end
 relationcanvas 130403 relation_ref 128867 // <aggregation>
   from ref 128002 z 2001 to ref 128514
-  role_a_pos 292 166 3000 role_b_pos 193 167 3000
-  multiplicity_a_pos 350 193 3000 multiplicity_b_pos 193 194 3000
+  role_a_pos 292 172 3000 role_b_pos 193 168 3000
+  multiplicity_a_pos 350 199 3000 multiplicity_b_pos 193 195 3000
 end
 end

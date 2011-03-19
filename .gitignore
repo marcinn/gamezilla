@@ -11,3 +11,4 @@
 /docs/uml/bouml/gamezilla/gamezilla/*.d
 
 /src/zillaclient/output
+/src/zillaportal/zillaportal/db
