@@ -41,28 +41,19 @@ relationcanvas 129379 relation_ref 128611 // <directional aggregation>
   role_a_pos 594 346 3000 no_role_b
   multiplicity_a_pos 627 371 3000 multiplicity_b_pos 189 235 3000
 end
-relationcanvas 129635 relation_ref 128739 // <directional aggregation>
-  from ref 128227 z 2001 to ref 128130
+relationcanvas 130147 relation_ref 128739 // <directional aggregation>
+  from ref 130019 z 3006 to ref 128130
   role_a_pos 682 322 3000 no_role_b
-  multiplicity_a_pos 657 322 3000 multiplicity_b_pos 655 262 3000
+  multiplicity_a_pos 657 322 3000 multiplicity_b_pos 655 274 3000
 end
-relationcanvas 129763 relation_ref 128867 // <aggregation>
-  from ref 128002 z 2001 to ref 128514
-  role_a_pos 296 164 3000 role_b_pos 189 164 3000
-  multiplicity_a_pos 354 189 3000 multiplicity_b_pos 189 189 3000
-end
-relationcanvas 129891 relation_ref 128995 // <composition>
-  from ref 128227 z 2001 to ref 128514
-  role_a_pos 469 164 3000 role_b_pos 585 164 3000
-  multiplicity_a_pos 469 189 3000 multiplicity_b_pos 610 189 3000
-end
-relationcanvas 130147 relation_ref 128995 // <composition>
+relationcanvas 130275 relation_ref 128995 // <composition>
   from ref 130019 z 3006 to ref 128514
   role_a_pos 469 163 3000 role_b_pos 559 163 3000
   multiplicity_a_pos 469 188 3000 multiplicity_b_pos 584 188 3000
 end
-relationcanvas 130275 relation_ref 128739 // <directional aggregation>
-  from ref 130019 z 3006 to ref 128130
-  role_a_pos 682 322 3000 no_role_b
-  multiplicity_a_pos 657 322 3000 multiplicity_b_pos 655 274 3000
+relationcanvas 130403 relation_ref 128867 // <aggregation>
+  from ref 128002 z 2001 to ref 128514
+  role_a_pos 296 164 3000 role_b_pos 189 164 3000
+  multiplicity_a_pos 354 189 3000 multiplicity_b_pos 189 189 3000
+end
 end
