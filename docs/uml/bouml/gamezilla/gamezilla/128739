@@ -1,6 +1,6 @@
 format 75
 "gamescatalog" // portal::gamescatalog
-  revision 3
+  revision 4
   modified_by 99 "marcin"
   // class settings
   //class diagram settings
@@ -337,7 +337,7 @@ ${docstring}${body}
 	
       end
 
-      classrelation 129635 // player (<aggregation>)
+      classrelation 129635 // <aggregation>
 	relation_ref 128867 // <aggregation>
       end
 

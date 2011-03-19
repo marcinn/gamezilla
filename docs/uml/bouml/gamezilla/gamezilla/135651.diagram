@@ -6,6 +6,8 @@ classinstance 128355 class_ref 128483 // gamescatalog.views
   name ""   xyz 137 4 2000 life_line_z 2000
 classinstance 128995 class_ref 135139 // Manager
   name "games"   xyz 301 4 2000 life_line_z 2000
+classinstance 131171 class_ref 128355 // Game
+  name "reversi"   xyz 466 4 2000 life_line_z 2000
 durationcanvas 128483 classinstance_ref 128099 // :Gracz
   xyzwh 33 81 2010 11 166
 end
@@ -22,7 +24,16 @@ durationcanvas 130147 classinstance_ref 128355 // :gamescatalog.views
   xyzwh 195 337 2010 11 200
 end
 durationcanvas 130403 classinstance_ref 128995 // games:Manager
-  xyzwh 346 352 2010 11 49
+  xyzwh 346 352 2010 11 65
+end
+durationcanvas 131299 classinstance_ref 131171 // reversi:Game
+  xyzwh 503 375 2010 11 29
+end
+durationcanvas 131683 classinstance_ref 131171 // reversi:Game
+  xyzwh 503 439 2010 11 28
+end
+durationcanvas 132067 classinstance_ref 131171 // reversi:Game
+  xyzwh 503 485 2010 11 37
 end
 msg 128739 synchronous
   from durationcanvas_ref 128483
@@ -65,13 +76,45 @@ msg 130531 synchronous
 msg 130915 return
   from durationcanvas_ref 130403
   to durationcanvas_ref 130147
-  yz 390 2015 explicitmsg "Game"
+  yz 405 2015 explicitmsg "Game"
   show_full_operations_definition default drawing_language default show_context_mode default
-  label_xy 258 376
+  label_xy 258 391
 msg 131043 return
   from durationcanvas_ref 130147
   to durationcanvas_ref 130019
   yz 525 2020 explicitmsg "game detail html"
   show_full_operations_definition default drawing_language default show_context_mode default
   label_xy 72 511
+msg 131427 synchronous
+  from durationcanvas_ref 130403
+  to durationcanvas_ref 131299
+  yz 375 2015 unspecifiedmsg
+  show_full_operations_definition default drawing_language default show_context_mode default
+msg 131555 return
+  from durationcanvas_ref 131299
+  to durationcanvas_ref 130403
+  yz 393 2020 unspecifiedmsg
+  show_full_operations_definition default drawing_language default show_context_mode default
+msg 131811 synchronous
+  from durationcanvas_ref 130147
+  to durationcanvas_ref 131683
+  yz 439 2015 msg operation_ref 136803 // "get_active_gameplays()"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 288 425
+msg 131939 return
+  from durationcanvas_ref 131683
+  to durationcanvas_ref 130147
+  yz 456 2020 unspecifiedmsg
+  show_full_operations_definition default drawing_language default show_context_mode default
+msg 132195 synchronous
+  from durationcanvas_ref 130147
+  to durationcanvas_ref 132067
+  yz 485 2015 msg operation_ref 136931 // "get_top_scores()"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 306 471
+msg 132323 return
+  from durationcanvas_ref 132067
+  to durationcanvas_ref 130147
+  yz 506 2025 unspecifiedmsg
+  show_full_operations_definition default drawing_language default show_context_mode default
 end
