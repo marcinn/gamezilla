@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="" company="Zilla Software" manager="Marcin Matl&#x105;g" phase="" project-start="20110312T000000Z" mrproject-version="2" calendar="1">
+<project name="GameZilla" company="Zilla Software" manager="Marcin Matl&#x105;g" phase="" project-start="20110312T000000Z" mrproject-version="2" calendar="2">
   <properties/>
   <phases>
     <phase name="Projektowa"/>
@@ -13,83 +13,83 @@
       <day-type id="1" name="Nonworking" description="Domy&#x15B;lny dzie&#x144; wolny"/>
       <day-type id="2" name="U&#x17C;ycie podstawy" description="Use day from base calendar"/>
       <day-type id="3" name="2011_05_07" description=""/>
-      <day-type id="4" name="2011_03_12" description=""/>
-      <day-type id="5" name="2011_06_04" description=""/>
-      <day-type id="6" name="2011_05_21" description=""/>
-      <day-type id="7" name="2011_03_19" description=""/>
-      <day-type id="8" name="2011_03_26" description=""/>
-      <day-type id="9" name="2011_04_02" description=""/>
+      <day-type id="4" name="2011_04_02" description=""/>
+      <day-type id="5" name="2011_03_26" description=""/>
+      <day-type id="6" name="2011_03_19" description=""/>
+      <day-type id="7" name="2011_05_21" description=""/>
+      <day-type id="8" name="2011_06_04" description=""/>
+      <day-type id="9" name="2011_03_12" description=""/>
     </day-types>
-    <calendar id="1" name="PSI">
-      <default-week mon="1" tue="1" wed="1" thu="1" fri="1" sat="0" sun="1"/>
-      <overridden-day-types>
-        <overridden-day-type id="4">
-          <interval start="1630" end="2015"/>
-        </overridden-day-type>
-        <overridden-day-type id="6">
-          <interval start="1100" end="1315"/>
-        </overridden-day-type>
-        <overridden-day-type id="0">
-          <interval start="1630" end="2015"/>
-        </overridden-day-type>
-        <overridden-day-type id="7">
-          <interval start="0800" end="1015"/>
-        </overridden-day-type>
-        <overridden-day-type id="5">
-          <interval start="1200" end="1500"/>
-        </overridden-day-type>
-        <overridden-day-type id="8">
-          <interval start="0800" end="1145"/>
-        </overridden-day-type>
-        <overridden-day-type id="3">
-          <interval start="1100" end="1400"/>
-        </overridden-day-type>
-      </overridden-day-types>
-      <days>
-        <day date="20110312" type="day-type" id="4"/>
-        <day date="20110322" type="day-type" id="1"/>
-        <day date="20110321" type="day-type" id="1"/>
-        <day date="20110521" type="day-type" id="6"/>
-        <day date="20110320" type="day-type" id="1"/>
-        <day date="20110430" type="day-type" id="1"/>
-        <day date="20110409" type="day-type" id="1"/>
-        <day date="20110319" type="day-type" id="7"/>
-        <day date="20110318" type="day-type" id="1"/>
-        <day date="20110323" type="day-type" id="1"/>
-        <day date="20110317" type="day-type" id="1"/>
-        <day date="20110528" type="day-type" id="1"/>
-        <day date="20110507" type="day-type" id="3"/>
-        <day date="20110416" type="day-type" id="1"/>
-        <day date="20110326" type="day-type" id="8"/>
-        <day date="20110315" type="day-type" id="1"/>
-        <day date="20110325" type="day-type" id="1"/>
-        <day date="20110313" type="day-type" id="1"/>
-        <day date="20110314" type="day-type" id="1"/>
-        <day date="20110324" type="day-type" id="1"/>
-        <day date="20110604" type="day-type" id="5"/>
-        <day date="20110514" type="day-type" id="1"/>
-        <day date="20110423" type="day-type" id="1"/>
-        <day date="20110316" type="day-type" id="1"/>
-      </days>
-    </calendar>
-    <calendar id="2" name="Domy&#x15B;lny">
+    <calendar id="1" name="Domy&#x15B;lny">
       <default-week mon="0" tue="0" wed="0" thu="0" fri="0" sat="1" sun="1"/>
       <overridden-day-types>
         <overridden-day-type id="0">
           <interval start="0800" end="1200"/>
           <interval start="1300" end="1700"/>
         </overridden-day-type>
-        <overridden-day-type id="9">
+        <overridden-day-type id="4">
           <interval start="1600" end="1815"/>
         </overridden-day-type>
       </overridden-day-types>
       <days>
-        <day date="20110402" type="day-type" id="9"/>
+        <day date="20110402" type="day-type" id="4"/>
+      </days>
+    </calendar>
+    <calendar id="2" name="PSI">
+      <default-week mon="1" tue="1" wed="1" thu="1" fri="1" sat="0" sun="1"/>
+      <overridden-day-types>
+        <overridden-day-type id="3">
+          <interval start="1100" end="1400"/>
+        </overridden-day-type>
+        <overridden-day-type id="8">
+          <interval start="1200" end="1500"/>
+        </overridden-day-type>
+        <overridden-day-type id="7">
+          <interval start="1100" end="1315"/>
+        </overridden-day-type>
+        <overridden-day-type id="6">
+          <interval start="0800" end="1015"/>
+        </overridden-day-type>
+        <overridden-day-type id="9">
+          <interval start="1630" end="2015"/>
+        </overridden-day-type>
+        <overridden-day-type id="0">
+          <interval start="1630" end="2015"/>
+        </overridden-day-type>
+        <overridden-day-type id="5">
+          <interval start="0800" end="1145"/>
+        </overridden-day-type>
+      </overridden-day-types>
+      <days>
+        <day date="20110312" type="day-type" id="9"/>
+        <day date="20110322" type="day-type" id="1"/>
+        <day date="20110321" type="day-type" id="1"/>
+        <day date="20110521" type="day-type" id="7"/>
+        <day date="20110320" type="day-type" id="1"/>
+        <day date="20110430" type="day-type" id="1"/>
+        <day date="20110409" type="day-type" id="1"/>
+        <day date="20110319" type="day-type" id="6"/>
+        <day date="20110318" type="day-type" id="1"/>
+        <day date="20110423" type="day-type" id="1"/>
+        <day date="20110317" type="day-type" id="1"/>
+        <day date="20110528" type="day-type" id="1"/>
+        <day date="20110507" type="day-type" id="3"/>
+        <day date="20110416" type="day-type" id="1"/>
+        <day date="20110326" type="day-type" id="5"/>
+        <day date="20110315" type="day-type" id="1"/>
+        <day date="20110325" type="day-type" id="1"/>
+        <day date="20110514" type="day-type" id="1"/>
+        <day date="20110314" type="day-type" id="1"/>
+        <day date="20110324" type="day-type" id="1"/>
+        <day date="20110604" type="day-type" id="8"/>
+        <day date="20110313" type="day-type" id="1"/>
+        <day date="20110323" type="day-type" id="1"/>
+        <day date="20110316" type="day-type" id="1"/>
       </days>
     </calendar>
   </calendars>
   <tasks>
-    <task id="1" name="Opracowanie platformy Gier Online" note="" work="172800" start="20110312T000000Z" end="20110611T174500Z" work-start="20110312T163000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+    <task id="1" name="Opracowanie platformy Gier Online" note="" work="200700" start="20110312T000000Z" end="20110611T174500Z" work-start="20110312T163000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
       <task id="2" name="Opracowanie dokumentacji projektowej" note="" work="21600" start="20110312T000000Z" end="20110319T091500Z" work-start="20110312T163000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <task id="3" name="Diagramy UML" note="" work="7200" duration="10800" start="20110312T000000Z" end="20110312T193000Z" work-start="20110312T163000Z" percent-complete="50" priority="0" type="normal" scheduling="fixed-duration"/>
         <task id="4" name="Api ZillaClient - ZillaPortal" note="" work="7200" start="20110312T193000Z" end="20110319T091500Z" work-start="20110312T193000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
@@ -103,12 +103,12 @@
           </predecessors>
         </task>
       </task>
-      <task id="6" name="Implementacja" note="" work="151200" start="20110319T091500Z" end="20110611T174500Z" work-start="20110319T091500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="6" name="Implementacja" note="" work="179100" start="20110319T091500Z" end="20110611T174500Z" work-start="20110319T091500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
           <predecessor id="1" predecessor-id="2" type="FS"/>
         </predecessors>
         <task id="7" name="ZillaClient" note="" work="50400" start="20110319T091500Z" end="20110604T121500Z" work-start="20110319T091500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-          <task id="8" name="Analiza istniej&#x105;cych technologii" note="" work="7200" start="20110319T091500Z" end="20110326T090000Z" work-start="20110319T091500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="8" name="Analiza istniej&#x105;cych technologii" note="" work="7200" start="20110319T091500Z" end="20110326T090000Z" work-start="20110319T091500Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
           <task id="9" name="Implementacja widgetu planszy" note="" work="14400" start="20110326T090000Z" end="20110402T174500Z" work-start="20110326T090000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
             <predecessors>
               <predecessor id="1" predecessor-id="8" type="FS"/>
@@ -130,21 +130,21 @@
             </predecessors>
           </task>
         </task>
-        <task id="13" name="ZillaGames" note="" work="36000" start="20110319T091500Z" end="20110402T194500Z" work-start="20110319T091500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-          <task id="14" name="Implementacja szkieletu us&#x142;ugi" note="" work="14400" start="20110319T091500Z" end="20110326T090000Z" work-start="20110319T091500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-          <task id="15" name="Implementacja gry Reversi" note="" work="14400" start="20110326T090000Z" end="20110402T174500Z" work-start="20110326T090000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="13" name="ZillaGames" note="" work="64800" start="20110319T091500Z" end="20110521T113000Z" work-start="20110319T091500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="14" name="Implementacja szkieletu us&#x142;ugi" note="" work="43200" start="20110319T091500Z" end="20110402T174500Z" work-start="20110319T091500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="15" name="Implementacja gry Reversi" note="" work="14400" start="20110402T174500Z" end="20110507T123000Z" work-start="20110402T174500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
             <predecessors>
               <predecessor id="1" predecessor-id="14" type="FS"/>
             </predecessors>
           </task>
-          <task id="16" name="Implementacja interfejsu komunikacyjnego (Gamezilla - ZillaPortal - ZIllaClient)" note="" work="7200" start="20110402T174500Z" end="20110402T194500Z" work-start="20110402T174500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="16" name="Implementacja interfejsu komunikacyjnego (Gamezilla - ZillaPortal - ZIllaClient)" note="" work="7200" start="20110507T123000Z" end="20110521T113000Z" work-start="20110507T123000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
             <predecessors>
               <predecessor id="1" predecessor-id="15" type="FS"/>
             </predecessors>
           </task>
         </task>
-        <task id="17" name="ZillaPortal" note="" work="64800" start="20110319T091500Z" end="20110611T174500Z" work-start="20110319T091500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-          <task id="18" name="Analiza dokumentacji wybranych rozwi&#x105;&#x144;" note="" work="14400" start="20110319T091500Z" end="20110326T110000Z" work-start="20110319T091500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="17" name="ZillaPortal" note="" work="63900" start="20110319T091500Z" end="20110611T174500Z" work-start="20110319T091500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="18" name="Analiza dokumentacji wybranych rozwi&#x105;&#x144;" note="" work="13500" duration="14400" start="20110319T091500Z" end="20110326T110000Z" work-start="20110319T091500Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-duration"/>
           <task id="19" name="Implementacja modeli" note="" work="14400" start="20110326T110000Z" end="20110402T194500Z" work-start="20110326T110000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
             <predecessors>
               <predecessor id="1" predecessor-id="18" type="FS"/>
@@ -178,18 +178,20 @@
     <group id="1" name="Programisci" admin-name="" admin-phone="" admin-email=""/>
   </resource-groups>
   <resources>
-    <resource group="1" id="1" name="Marcin Nowak" short-name="MN" type="1" units="0" email="marcin.j.nowak@gmail.com" note="" std-rate="0"/>
+    <resource group="1" id="1" name="Kamil Majcher" short-name="KM" type="1" units="0" email="majcher.kamil@gmail.com" note="" std-rate="0"/>
     <resource group="1" id="2" name="Marcin Matl&#x105;g" short-name="MM" type="1" units="0" email="marcin.matlag@gmail.com" note="" std-rate="0"/>
-    <resource group="1" id="3" name="Kamil Majcher" short-name="KM" type="1" units="0" email="majcher.kamil@gmail.com" note="" std-rate="0"/>
+    <resource group="1" id="3" name="Marcin Nowak" short-name="MN" type="1" units="0" email="marcin.j.nowak@gmail.com" note="" std-rate="0"/>
   </resources>
   <allocations>
-    <allocation task-id="15" resource-id="1" units="100"/>
-    <allocation task-id="14" resource-id="1" units="200"/>
-    <allocation task-id="11" resource-id="1" units="15"/>
-    <allocation task-id="5" resource-id="1" units="50"/>
-    <allocation task-id="4" resource-id="1" units="20"/>
+    <allocation task-id="11" resource-id="1" units="35"/>
+    <allocation task-id="5" resource-id="1" units="35"/>
+    <allocation task-id="4" resource-id="1" units="40"/>
     <allocation task-id="16" resource-id="1" units="33"/>
     <allocation task-id="22" resource-id="1" units="50"/>
+    <allocation task-id="21" resource-id="1" units="100"/>
+    <allocation task-id="20" resource-id="1" units="100"/>
+    <allocation task-id="19" resource-id="1" units="100"/>
+    <allocation task-id="18" resource-id="1" units="94"/>
     <allocation task-id="3" resource-id="1" units="22"/>
     <allocation task-id="11" resource-id="2" units="50"/>
     <allocation task-id="10" resource-id="2" units="100"/>
@@ -199,15 +201,13 @@
     <allocation task-id="4" resource-id="2" units="40"/>
     <allocation task-id="16" resource-id="2" units="33"/>
     <allocation task-id="3" resource-id="2" units="22"/>
-    <allocation task-id="11" resource-id="3" units="35"/>
-    <allocation task-id="5" resource-id="3" units="35"/>
-    <allocation task-id="4" resource-id="3" units="40"/>
+    <allocation task-id="15" resource-id="3" units="100"/>
+    <allocation task-id="14" resource-id="3" units="200"/>
+    <allocation task-id="11" resource-id="3" units="15"/>
+    <allocation task-id="5" resource-id="3" units="50"/>
+    <allocation task-id="4" resource-id="3" units="20"/>
     <allocation task-id="16" resource-id="3" units="33"/>
     <allocation task-id="22" resource-id="3" units="50"/>
-    <allocation task-id="21" resource-id="3" units="100"/>
-    <allocation task-id="20" resource-id="3" units="100"/>
-    <allocation task-id="19" resource-id="3" units="100"/>
-    <allocation task-id="18" resource-id="3" units="100"/>
     <allocation task-id="3" resource-id="3" units="22"/>
   </allocations>
 </project>
