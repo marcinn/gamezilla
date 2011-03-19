@@ -1,0 +1,22 @@
+format 75
+
+usecasecanvas 128002 usecase_ref 129282 // Wyslij informacje o wyjsciu
+  xyzwh 579 200 3005 64 32 label_xy 539.5 232.5
+end
+classcanvas 128130 class_ref 128258 // Klient
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 169.5 151.5 2000
+end
+usecasecanvas 128258 usecase_ref 128770 // Wyslij informacje do serwera
+  xyzwh 303 166 3005 64 32 label_xy 258.5 198.5
+end
+usecasecanvas 128386 usecase_ref 128898 // Wyslij ruch
+  xyzwh 569 99 3005 64 32 label_xy 571.5 131.5
+end
+line 128514 ---- decenter_begin 698
+  from ref 128130 z 3006 to ref 128258
+line 129410 --->
+  from ref 128002 z 3006 stereotype "<<extend>>" xyz 439.5 197 3000 to ref 128258
+line 129538 --->
+  from ref 128386 z 3006 stereotype "<<extend>>" xyz 434.5 146 3000 to ref 128258
+end
