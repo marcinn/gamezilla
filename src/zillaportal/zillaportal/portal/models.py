@@ -4,10 +4,10 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.ForeignKey(User, unique=True)
-    games_played = models.IntegerField()
-    avatar_image = models.ImageField(upload_to='images')
-    level =  models.IntegerField()
-    about = models.CharField(max_length=500)
+    games_played = models.IntegerField(default=0)
+    avatar_image = models.ImageField(upload_to='images', null=True, blank=True)
+    level =  models.IntegerField(default=0)
+    about = models.CharField(max_length=500, default='')
 
 class Game(models.Model):
     title = models.CharField(max_length=200)

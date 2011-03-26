@@ -96,4 +96,4 @@ INSTALLED_APPS = (
     'portal',
 )
 
-AUTH_PROFILE_MODULE = "portal.Profile"
+AUTH_PROFILE_MODULE = "portal.profile"
