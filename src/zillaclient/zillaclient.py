@@ -2,7 +2,7 @@
 
 import pyjd
 from pyjamas.ui.RootPanel import RootPanel
-from pyjamas.ui.Panel import Panelfrom pyjamas.ui.HTML import HTML
+from pyjamas.ui.HTML import HTML
 
 from MainWindow import MainWindow
 

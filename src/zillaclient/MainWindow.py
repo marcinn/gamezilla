@@ -4,11 +4,11 @@ from pyjamas.ui.FocusPanel import FocusPanel
 from pyjamas.ui.TextArea import TextArea
 from pyjamas.ui.TabPanel import TabPanel
 
+from LoginWindow import LoginWindow
 
-
-from pyjamas.ui.HorizontalPanel import HorizontalPanel
-from pyjamas.ui.MenuBar import MenuBar
-from pyjamas.ui.Label import Label
+#from pyjamas.ui.HorizontalPanel import HorizontalPanel
+#from pyjamas.ui.MenuBar import MenuBar
+#from pyjamas.ui.Label import Label
 
 
 from ZillaWindow import ZillaWindow
@@ -37,6 +37,9 @@ class  MainWindow (FocusPanel, ZillaWindow):
 
         self.add (tabs)
 
+        lwindow = LoginWindow(centered=True)
+        lwindow.setPopupPosition (100, 100)
+        lwindow.show()
 
     def get_open_games(self):
         return True

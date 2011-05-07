@@ -6,6 +6,8 @@ from ZillaConnection import ZillaConnection
 
 class  ZillaWindow(object):
 
+    API_STRING=''
+
     def __init__(self, **kwargs):
 
         try:
