@@ -45,7 +45,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = '/home/w4rri0r3k/gamezilla/src/zillaportal/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -55,7 +55,7 @@ MEDIA_URL = ''
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '2+@t-_+1cl1w9k(z&b&1uw3c28cwyai#-c5fq$1np1&3u-o%aw'
@@ -81,7 +81,9 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    '/home/w4rri0r3k/gamezilla/src/zillaportal/template'
 )
+STATIC_URL = '/static/'
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -94,6 +96,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     'portal',
+    'django.contrib.staticfiles',
 )
 
 AUTH_PROFILE_MODULE = "portal.profile"

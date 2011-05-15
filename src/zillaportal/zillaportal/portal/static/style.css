@@ -113,19 +113,3 @@ a {
 		float:right;
 		padding-right:10px;
 }
-
-#content-main {
-    float: left;
-    width: 100%; }
-    
-input, textarea, select, .form-row p {
-    margin: 2px 0;
-    padding: 2px 3px;
-    vertical-align: middle;
-    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
-    font-weight: normal;
-    font-size: 11px;
-}
-.login .form-row #id_username, .login .form-row #id_password {
-    width: 14em;
-}

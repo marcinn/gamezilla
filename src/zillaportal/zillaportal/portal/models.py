@@ -8,17 +8,18 @@ import datetime
 class Profile(models.Model):
     user = models.ForeignKey(User, unique=True)
     games_played = models.IntegerField(default=0)
-    avatar_image = models.ImageField(upload_to='images', null=True, blank=True)
+    avatar_image = models.ImageField(upload_to='images/avatars', null=True, blank=True)
     level =  models.IntegerField(default=0)
     about = models.CharField(max_length=500, default='')
-    
+    my_friends = models.ManyToManyField(User, related_name='friends')
+     
     def __unicode__(self):
         return self.user.username
 
 class Game(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    screenshot = models.ImageField(upload_to='images', null=True, blank=True)
+    screenshot = models.ImageField(upload_to='images/games', null=True, blank=True)
     games_count = models.IntegerField()
     #client = wtf?
     #gameserver = wtf?
