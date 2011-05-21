@@ -13,10 +13,9 @@ urlpatterns = patterns('',
     (r'^$', 'game.views.index'),
     (r'^index/$', 'game.views.index'),
 
-    (r'^game/$', include('game.urls')),
+    (r'^game/', include('game.urls')),
 
-    (r'^login/$', 'game.views.login'),
-    (r'^profile/$', include('userprofile.urls')),
+    (r'^profile/', include('userprofile.urls')),
 
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes':True}),
