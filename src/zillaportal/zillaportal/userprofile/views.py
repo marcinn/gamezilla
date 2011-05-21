@@ -83,13 +83,12 @@ def register(request):
 	if request.method == "POST":
 		form = registration_form(data=request.POST)
 		if form.is_valid():
-            form.save()
-            success = True
+			form.save()
+			success = True
                   
 	else:
-        form = password_change_form(user=request.user)
-    context = {
-        'form': form,
-        'success' : success,
-    }
+		form = password_change_form(user=request.user)
+    
+ 	context = {'form': form, 'success' : success}
+ 	
 	return render_to_response('profile/register.html', context, context_instance=RequestContext(request))

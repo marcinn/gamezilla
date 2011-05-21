@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*
+
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -15,7 +17,7 @@ class RegisterForm(UserCreationForm):
     email = forms.EmailField(label = "Email")
     first_name = forms.CharField(label = "First name")
     last_name = forms.CharField(label = "Last name")
-    avatar = forms.ImageField(upload_to='images/games')
+    avatar = forms.ImageField()
 
         
 def save(self, commit=True):
