@@ -19,7 +19,7 @@ import forms
 
 @csrf_protect
 @never_cache
-def login(request, template_name='login.html',
+def login(request, template_name='profile/login.html',
           redirect_field_name=REDIRECT_FIELD_NAME,
           authentication_form=AuthenticationForm,
           current_app=None, extra_context=None):
@@ -77,3 +77,19 @@ def logout_view (request):
 	logout(request)
 	
 	return HttpResponseRedirect('/')
+	
+def register(request):
+	success = False
+	if request.method == "POST":
+		form = registration_form(data=request.POST)
+		if form.is_valid():
+            form.save()
+            success = True
+                  
+	else:
+        form = password_change_form(user=request.user)
+    context = {
+        'form': form,
+        'success' : success,
+    }
+	return render_to_response('profile/register.html', context, context_instance=RequestContext(request))
