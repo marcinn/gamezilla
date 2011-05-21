@@ -10,12 +10,12 @@ urlpatterns = patterns('',
     # (r'^zillaportal/', include('zillaportal.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    (r'^$', 'portal.views.index'),
-    (r'^index/$', 'portal.views.index'),
+    (r'^$', 'game.views.index'),
+    (r'^index/$', 'game.views.index'),
 
-    (r'^game/$', 'portal.views.game'),
+    (r'^game/$', include('game.urls')),
 
-    (r'^login/$', 'portal.views.login'),
+    (r'^login/$', 'game.views.login'),
     (r'^profile/$', include('userprofile.urls')),
 
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),

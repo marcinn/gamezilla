@@ -17,13 +17,14 @@
         <div id="logo"></div>
         <div id="menu">    
             {% block menu %}
-            <a href="/portal/games">Dostępne Gry</a>
+            <a href="/game">Dostępne Gry</a>
             <a href="/profile">Profil [{{user.username}}]</a>
             
             {% if user.is_authenticated %}
             <a href="/profile/logout">Wyloguj</a>
             {% else %}
-            <a href="/login">Zaloguj</a>
+            <a href="/profile/login">Zaloguj</a>
+            <a href="/profile/register">Register</a>
             {% endif %}
             
             {% endblock %}
