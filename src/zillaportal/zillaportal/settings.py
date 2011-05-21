@@ -1,3 +1,4 @@
+import os
 # Django settings for zillaportal project.
 
 DEBUG = True
@@ -45,12 +46,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
-<<<<<<< HEAD
-MEDIA_ROOT = '/home/w4rri0r3k/gamezilla/src/zillaportal/media/'
-=======
-#MEDIA_ROOT = '/home/w4rri0r3k/gamezilla/src/zillaportal/media'
-MEDIA_ROOT = '/home/wooden/gamezilla/src/zillaportal/media'
->>>>>>> e5cfb378d6102d8d33a0f0f7c9f2661ce76fb65f
+MEDIA_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -86,8 +82,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-#    '/home/w4rri0r3k/gamezilla/src/zillaportal/template'
-    '/home/wooden/gamezilla/src/zillaportal/template'
+    os.path.join(os.path.abspath(os.path.dirname(__file__)), '../template')
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -113,7 +108,3 @@ INSTALLED_APPS = (
 )
 
 AUTH_PROFILE_MODULE = "userprofile.Profile"
-
-#TEMPLATEX_CONTEXT_PROCESSORS = (
-#	'django.contrib.auth.context_processors.auth',
-#)
