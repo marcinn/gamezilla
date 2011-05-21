@@ -14,6 +14,8 @@ from django.contrib.auth import REDIRECT_FIELD_NAME, login as auth_login, logout
 from django.contrib.auth.forms import AuthenticationForm 
 from django.contrib.sites.models import get_current_site
 
+import forms
+
 
 @csrf_protect
 @never_cache
@@ -62,8 +64,13 @@ def login(request, template_name='login.html',
 
 def base (request):
 	
-	
-    return render_to_response('profile/base.html', context_instance=RequestContext(request))
+	f = None
+	if request.method=="POST":
+		f = forms.UploadAvatar (data=request.POST)
+	else:
+		f = forms.UploadAvatar ()
+		
+	return render_to_response('profile/base.html', {'uploadavatar' : f}, context_instance=RequestContext(request))
 
 
 def logout_view (request):
