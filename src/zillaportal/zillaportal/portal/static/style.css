@@ -3,7 +3,7 @@ body {
 		margin-top:10px;
 		margin-left:auto;
 		margin-right:auto;
-		width:740px;
+		width:100%;
 		margin-bottom:10px;
 		list-style: none;
     }
@@ -19,7 +19,7 @@ a {
 		color: #007236;
 	}
 #kontener {
-		width:740px;
+		width:90%;
 		height:auto;
 		padding-bottom:20px;
 		border-left:solid #dcdcdc 1px;
@@ -30,14 +30,14 @@ a {
 	}
 #logo {
 		background:url(images/logo.jpg) no-repeat;
-		width:720px;
+		width:90%;
 		height:150px;
 		border:solid #818181 1px;
 		margin-top:10px;
 	}
 #menu {
-		max-width:720px;
-		width:720px;
+		max-width:90%;
+		width:90%;
 		height:22px;
 		background:#eeeeee;
 		border-top:solid #a9a9a9 1px;
@@ -88,7 +88,7 @@ a {
 #stopka {
 		clear:both;
 		text-align:right;
-		width:740px;
+		width:90%;
 		height:15px;
 		margin-top:5px;
 		border-top:solid #dcdcdc 1px;

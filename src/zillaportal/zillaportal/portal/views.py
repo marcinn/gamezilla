@@ -10,6 +10,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth import REDIRECT_FIELD_NAME, login as auth_login
 from django.contrib.auth.forms import AuthenticationForm 
 from django.contrib.sites.models import get_current_site
+from portal.models import Game
 
 
 @csrf_protect
@@ -59,4 +60,9 @@ def login(request, template_name='login.html',
 def index(request):
 
     return render_to_response('index.html', context_instance=RequestContext(request))
-                              
+    
+def game(request):
+	games = Game.objects.order_by('title')
+	
+	return render_to_response('game.html', {'games' : games})
+	                              
