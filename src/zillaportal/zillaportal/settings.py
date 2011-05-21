@@ -90,7 +90,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
 )
 
-STATIC_URL = '/static/'
+STATIC_ROOT =  os.path.join(os.path.abspath(os.path.dirname(__file__)), '../static')
+
+STATIC_URL = 'http://127.0.0.1:8000/static/'
 
 INSTALLED_APPS = (
     'django.contrib.auth',
