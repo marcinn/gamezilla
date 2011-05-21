@@ -9,5 +9,6 @@ urlpatterns = patterns('userprofile.views',
     (r'^$', 'base'),
     (r'^login/$', 'login'),
     (r'^logout/$', 'logout_view'),
+    (r'^register/$', 'register'),
 )
 

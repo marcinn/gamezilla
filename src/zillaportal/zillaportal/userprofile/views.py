@@ -81,13 +81,14 @@ def logout_view (request):
 def register(request):
 	success = False
 	if request.method == "POST":
-		form = registration_form(data=request.POST)
+		form = forms.RegisterForm(data=request.POST)
 		if form.is_valid():
 			form.save()
 			success = True
                   
 	else:
-		form = password_change_form(user=request.user)
+		#form = forms.RegisterForm(user=request.user)
+		form = forms.RegisterForm()
     
  	context = {'form': form, 'success' : success}
  	
