@@ -42,7 +42,7 @@ def login(request, template_name='login.html',
             return HttpResponseRedirect(redirect_to)
     else:
         form = authentication_form(request)
-
+        
     request.session.set_test_cookie()
 
     current_site = get_current_site(request)
@@ -60,9 +60,13 @@ def login(request, template_name='login.html',
 def index(request):
 
     return render_to_response('index.html', context_instance=RequestContext(request))
+<<<<<<< HEAD
     
 def game(request):
 	games = Game.objects.order_by('title')
 	
 	return render_to_response('game.html', {'games' : games})
 	                              
+=======
+                              
+>>>>>>> e5cfb378d6102d8d33a0f0f7c9f2661ce76fb65f

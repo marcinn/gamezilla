@@ -11,9 +11,13 @@ urlpatterns = patterns('',
 
     # Uncomment the admin/doc line below to enable admin documentation:
     (r'^$', 'portal.views.index'),
-    (r'^login/$', 'portal.views.login'),
     (r'^index/$', 'portal.views.index'),
+
     (r'^game/$', 'portal.views.game'),
+
+    (r'^login/$', 'portal.views.login'),
+    (r'^profile/$', include('userprofile.urls')),
+
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes':True}),
 

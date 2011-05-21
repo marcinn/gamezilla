@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
     <meta http-equiv="Content-Language" content="pl" />
     <meta name="Keywords" content="gry, online, reversi, zillaportal" />
-    <meta name="Description" content="Największa baza gier online" />
+    <meta name="Description" content="Najwieksza baza gier online" />
     <meta name="Robots" content="ALL" />
     <meta name="Author" content="flankerds.com" />
     <link rel="stylesheet" href="/static/style.css" type="text/css" />
@@ -18,7 +18,7 @@
         <div id="menu">    
             {% block menu %}
             <a href="/portal/games">Dostępne Gry</a>
-            <a href="/profile">Profil [{{user.username}}]</a>
+            <a href="/profile">Profil [{{request.user.username}}]</a>
             
             {% if user.is_authenticated %}
             <a href="/profile/logout">Wyloguj</a>

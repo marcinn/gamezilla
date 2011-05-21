@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% load i18n %}
+
+
+{% block content %}
+
+
+<p>
+	<img src="/media/{{user.get_profile.avatar_image}}" />
+	<h3>Użytkownik</h3><br />
+	<b>Nazwa użytkownik: </b>{{user.username}}<br />
+	<b>email: </b>{{user.email}}<br />
+	<b>imię: </b>{{user.first_name}}<br />
+	<b>nazwisko: </b>{{user.last_name}}<br />
+</p>
+<p>
+	<h3>Podsumowanie aktywności</h3><br />
+</p>
+
+<p>
+	<h3>Znajomi</h3><br />
+</p>
+
+{% endblock %}
