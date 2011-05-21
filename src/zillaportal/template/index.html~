@@ -18,7 +18,7 @@
         <div id="menu">    
             {% block menu %}
             <a href="/portal/games">Dostępne Gry</a>
-            <a href="/profile">Profil [{{user.username}}]</a>
+            <a href="/profile">Profil [{{request.user.username}}]</a>
             
             {% if user.is_authenticated %}
             <a href="/profile/logout">Wyloguj</a>

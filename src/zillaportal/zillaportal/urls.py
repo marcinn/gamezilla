@@ -10,8 +10,9 @@ urlpatterns = patterns('',
 
     # Uncomment the admin/doc line below to enable admin documentation:
     (r'^$', 'portal.views.index'),
-    (r'^login/$', 'portal.views.login'),
     (r'^index/$', 'portal.views.index'),
+    (r'^login/$', 'portal.views.login'),
+    (r'^profile/$', include('userprofile.urls')),
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:

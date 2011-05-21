@@ -41,7 +41,7 @@ def login(request, template_name='login.html',
             return HttpResponseRedirect(redirect_to)
     else:
         form = authentication_form(request)
-
+        
     request.session.set_test_cookie()
 
     current_site = get_current_site(request)
