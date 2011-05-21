@@ -10,7 +10,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 
-from django.contrib.auth import REDIRECT_FIELD_NAME, login as auth_login
+from django.contrib.auth import REDIRECT_FIELD_NAME, login as auth_login, logout
 from django.contrib.auth.forms import AuthenticationForm 
 from django.contrib.sites.models import get_current_site
 
@@ -67,6 +67,6 @@ def base (request):
 
 
 def logout_view (request):
+	logout(request)
 	
-	
-	 return render_to_response('profile/base.html', context_instance=RequestContext(request))
+	return HttpResponseRedirect('/')
