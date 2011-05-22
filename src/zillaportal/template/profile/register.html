@@ -6,5 +6,8 @@
 <table>
 {{ form.as_table}} 
 </table>
-<input type="submit">
+<form method="POST" action="/profile/register/">
+	{% csrf_token %}
+	<input type="submit">
+</form>
 {% endblock %}
