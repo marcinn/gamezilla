@@ -3,11 +3,12 @@
 
 
 {% block content %}
-
-
 <p>
 	<img src="/media/{{user.get_profile.avatar_image}}" /><br />
-	{{ uploadavatar }}
+	<form method="POST" >
+	{{ uploadavatar.as_p }}
+	<p><input type="submit" value="Wyślij"  action="/profile/" /></p>
+	</form>
 	<h3>Użytkownik</h3><br />
 	<b>Nazwa użytkownik: </b>{{user.username}}<br />
 	<b>email: </b>{{user.email}}<br />
@@ -21,5 +22,4 @@
 <p>
 	<h3>Znajomi</h3><br />
 </p>
-
 {% endblock %}
