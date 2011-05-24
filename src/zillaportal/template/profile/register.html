@@ -8,7 +8,6 @@
 </table>
 <form method="POST" action="/profile/register/">
 	{% csrf_token %}
-<input type="submit" value="{% trans 'Register' %}">
-	<input type="submit">
+<div class="submit-row"><input type="submit" value="{%trans 'Rejestruj' %}"></div>
 </form>
 {% endblock %}

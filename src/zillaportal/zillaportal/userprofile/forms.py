@@ -15,9 +15,9 @@ class UploadAvatar(forms.Form):
 
 class RegisterForm(UserCreationForm):
 	email = forms.EmailField(label = "Email")
-	first_name = forms.CharField(label = "First name")
-	last_name = forms.CharField(label = "Last name")
-	avatar = forms.ImageField()
+	first_name = forms.CharField(label = "Imię", required=False)
+	last_name = forms.CharField(label = "Nazwisko", required=False)
+	avatar = forms.ImageField(required=False)
 
 #	def __init__(self, *args, **kwargs):
 #		super(RegisterForm).__init__(*args, **kwargs)
