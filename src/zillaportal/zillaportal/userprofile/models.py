@@ -69,7 +69,7 @@ class Activity (models.Model):
 		return self.user.username + " " + self.desc
 	
 	@staticmethod
-	def add_activity (user, desc, type):
+	def add_activity (user, desc, type='G'):
 		a = Activity()
 		a.user = user
 		a.desc = desc
@@ -152,14 +152,16 @@ class Friendlist (models.Model):
 	date = models.DateTimeField(auto_now_add=True, auto_now = True)
 	
 	def decline (self):
-		topic = u"Użytkownik " + self.invited.username + u" odrzucił twoje zaproszenie." 		
+		topic = u"Użytkownik " + self.invited.username + u" odrzucił twoje zaproszenie." 
+		Activity.add_activity (self.inviter.user, topic)
 		Message.send_msg (Message.get_messanger(), self.inviter.user, topic, "")
 		self.delete()
 		
 	def accept (self):		
 		
 		if self.status =='I':
-			topic = u"Użytkownik " + self.invited.username + u" zaakceptowal twoje zaproszenie."		
+			topic = u"Użytkownik " + self.invited.username + u" zaakceptowal twoje zaproszenie."
+			Activity.add_activity (self.inviter.user, topic)	
 			Message.send_msg (Message.get_messanger(), self.inviter.user, topic, "")
 			self.status = 'A'
 			self.save()
@@ -171,6 +173,8 @@ class Friendlist (models.Model):
 			reverse_inv.save()
 		
 	def delete_friendship (self):
+		topic = u"Użytkownik " + self.invited.username + u" usunął znajomość z tobą."
+		Activity.add_activity (self.inviter.user, topic)
 		Friendlist.objects.filter (inviter=self.invited.get_profile(), invited=self.inviter.user).delete()
 		Friendlist.objects.filter (inviter=self.inviter, invited=self.invited).delete()
 		
