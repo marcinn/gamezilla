@@ -10,10 +10,10 @@ from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 
-from django.contrib.auth import REDIRECT_FIELD_NAME, login as auth_login, logout
+from django.contrib.auth import REDIRECT_FIELD_NAME, login as auth_login, logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm 
 from django.contrib.sites.models import get_current_site
-from django.contrib.auth import authenticate
+
 
 import forms
 
@@ -84,9 +84,12 @@ def register(request):
 	if request.method == "POST":
 		form = forms.RegisterForm(data=request.POST)
 		if form.is_valid():
-			form.save()
+			user = form.save()
 			success = True
-			#login(request, user)
+			
+			user.backend = 'django.contrib.auth.backends.ModelBackend'
+			auth_login(request, user)
+			
 			return HttpResponseRedirect('/index')
                   
 	else:
