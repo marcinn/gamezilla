@@ -3,10 +3,11 @@
 
 
 {% block content %}
+<form method="POST" action="/profile/register/">
 <table>
 {{ form.as_table}} 
 </table>
-<form method="POST" action="/profile/register/">
+
 	{% csrf_token %}
 <div class="submit-row"><input type="submit" value="{%trans 'Rejestruj' %}"></div>
 </form>

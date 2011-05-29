@@ -19,17 +19,18 @@ class RegisterForm(UserCreationForm):
 	last_name = forms.CharField(label = "Nazwisko", required=False)
 	avatar = forms.ImageField(required=False)
 
-#	def __init__(self, *args, **kwargs):
-#		super(RegisterForm).__init__(*args, **kwargs)
+	def __init__(self, *args, **kwargs):
+		super(UserCreationForm, self).__init__(*args, **kwargs)
 	
 	def save(self, commit=True):
+		
 		user = super(RegisterForm, self).save(commit=False)
-		first_name = self.cleaned_data["first_name"].split()
-		last_name = self.cleaned_data["last_name"].split()
-		user.first_name = first_name
-		user.last_name = last_name
+		
+		user.first_name = self.cleaned_data["first_name"]
+		user.last_name = self.cleaned_data["last_name"]		 
 		user.email = self.cleaned_data["email"]
 		avatar = self.cleaned_data["avatar"]
+		
 		if commit:
 			user.save()
 		return user
