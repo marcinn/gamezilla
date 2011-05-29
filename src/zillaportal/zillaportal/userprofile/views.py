@@ -13,6 +13,7 @@ from django.shortcuts import render_to_response
 from django.contrib.auth import REDIRECT_FIELD_NAME, login as auth_login, logout
 from django.contrib.auth.forms import AuthenticationForm 
 from django.contrib.sites.models import get_current_site
+from django.contrib.auth import authenticate
 
 import forms
 
@@ -85,6 +86,8 @@ def register(request):
 		if form.is_valid():
 			form.save()
 			success = True
+			#login(request, user)
+			return HttpResponseRedirect('/index')
                   
 	else:
 		#form = forms.RegisterForm(user=request.user)
