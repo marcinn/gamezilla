@@ -11,13 +11,14 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.shortcuts import get_object_or_404
 
-from django.contrib.auth import REDIRECT_FIELD_NAME, login as auth_login, logout
+from django.contrib.auth import REDIRECT_FIELD_NAME, login as auth_login, logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm 
 from django.contrib.sites.models import get_current_site
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 from models import Friendlist
+
 
 import forms
 
@@ -88,8 +89,13 @@ def register(request):
 	if request.method == "POST":
 		form = forms.RegisterForm(data=request.POST)
 		if form.is_valid():
-			form.save()
+			user = form.save()
 			success = True
+			
+			user.backend = 'django.contrib.auth.backends.ModelBackend'
+			auth_login(request, user)
+			
+			return HttpResponseRedirect('/index')
                   
 	else:
 		#form = forms.RegisterForm(user=request.user)
