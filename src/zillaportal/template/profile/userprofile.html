@@ -1,0 +1,63 @@
+{% extends "index.html" %}
+{% load i18n %}
+
+
+{% block content %}
+
+{% if friend_status == 'N' %}
+<a href="/profile/invite/{{userprofile.username}}" >Zaproś do grona znajomych</a> <br />
+{% endif %}
+
+{% if friend_status == 'I' %}
+<i>Oczekuję na akceptacje zaproszenia</i><br />
+{% endif %}
+
+{% if friend_status == 'F' %}
+<br /><br />
+{% endif %}
+
+<div>
+<img src="/media/{{userprofile.get_profile.avatar_image}}" />
+</div>
+
+<p>
+	<div>
+	<h3>Użytkownik</h3><br /></div>
+	<b>Nazwa użytkownik: </b>{{userprofile.username}}<br />
+	<b>email: </b>{{userprofile.email}}<br />
+	<b>imię: </b>{{userprofile.first_name}}<br />
+	<b>nazwisko: </b>{{userprofile.last_name}}<br />
+</p>
+<p>
+	<h3>Podsumowanie aktywności</h3><br />
+	{% if userprofile.get_profile.count_activities != 0 %}
+
+		{% for a in userprofile.get_profile.get_activities %}
+			<div>{{a.date}} - {{a.desc}}</div>
+		{% endfor %}
+	{% endif %}		
+	{% if  userprofile.get_profile.count_activities == 0 %}
+	<i>brak</i>
+	{% endif %}		
+</p>
+<p>
+	<h3>Znajomi</h3><br />
+	{% if  userprofile.get_profile.count_friends != 0 %}
+
+	{% for i in userprofile.get_profile.get_friends %}
+		<table><tr>
+		<td><img src="/media/{{i.inviter.get_profile.avatar_image}}" /></td>
+		<td>
+			<h4><a href ="/profile/user/{{i.inviter.user.username}}">{{i.inviter.user.username}}</a></h4><br />
+			<i>{{i.inviter.user.first_name}} {{i.inviter.user.first_last}}</i>
+		</td>
+		<td style="vertical-align: middle;">
+		</td>		
+		</tr></table>
+	{% endfor %}
+{% endif %}
+{% if userprofile.get_profile.count_friends == 0 %}
+<i>brak</i>
+{% endif %}	
+</p>
+{% endblock %}

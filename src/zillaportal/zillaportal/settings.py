@@ -110,6 +110,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 )
 
+LOGIN_URL='/profile/login'
+
 AUTH_PROFILE_MODULE = "userprofile.Profile"
 
 

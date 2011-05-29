@@ -10,5 +10,9 @@ urlpatterns = patterns('userprofile.views',
     (r'^login/$', 'login'),
     (r'^logout/$', 'logout_view'),
     (r'^register/$', 'register'),
+    (r'^user/(?P<id>\d{1,10})$', 'userprofile'),
+    (r'^user/(?P<name>\w{1,20})$', 'userprofile'),
+    (r'^invite/(?P<name>\w{1,20})$', 'invite'),
+    (r'^invitation/(?P<id>\d{1,10})/(?P<action>\w{1,10})$', 'invitation'),
 )
 

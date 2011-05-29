@@ -11,6 +11,8 @@ class UploadAvatar(forms.Form):
     
     def clean_avatar_img (self):
 		pass
+		
+	
 
 
 class RegisterForm(UserCreationForm):

@@ -3,23 +3,83 @@
 
 
 {% block content %}
-<p>
-	<img src="/media/{{user.get_profile.avatar_image}}" /><br />
-	<form method="POST" >
+<div>
+	<img src="/media/{{user.get_profile.avatar_image}}" /></div><br />
+<div>
+	<form method="POST" enctype="multipart/form-data" action="/profile/" >
 	{{ uploadavatar.as_p }}
+	{% csrf_token %}
 	<p><input type="submit" value="Wyślij"  action="/profile/" /></p>
 	</form>
-	<h3>Użytkownik</h3><br />
+</div>
+
+<br /><br />
+<p>
+<div>
+	<h3>Użytkownik</h3><br /></div>
 	<b>Nazwa użytkownik: </b>{{user.username}}<br />
 	<b>email: </b>{{user.email}}<br />
 	<b>imię: </b>{{user.first_name}}<br />
 	<b>nazwisko: </b>{{user.last_name}}<br />
 </p>
+
 <p>
 	<h3>Podsumowanie aktywności</h3><br />
+	{% if  user.get_profile.count_activities != 0 %}
+
+		{% for a in user.get_profile.get_activities %}
+			<div>{{a.date}} - {{a.desc}}</div>
+		{% endfor %}
+	{% else %}	
+	<i>brak</i>
+	{% endif %}	
 </p>
+</p>
+
+
+	<h3>Oczekujące zaproszenia</h3><br />
+{% if  user.get_profile.count_invitations != 0 %}
+<p>
+	{% for i in user.get_profile.get_invitations %}
+		<table><tr>
+		<td><img src="/media/{{i.inviter.get_profile.avatar_image}}" /></td>
+		<td>
+			<h4><a href ="/profile/user/{{i.inviter.user.username}}">{{i.inviter.user.username}}</a></h4><br />
+			<i>{{i.inviter.user.first_name}} {{i.inviter.user.first_last}}</i>
+		</td>
+		<td style="vertical-align: middle;">
+			<a style="color: green;" href="/profile/invitation/{{i.id}}/accept" >Akceptuj</a>
+			<a style="color: red;" href="/profile/invitation/{{i.id}}/decline" >Odrzuć</a><br />
+		</td>		
+		</tr></table>
+	{% endfor %}
+</p>
+{% else %}
+<i>brak</i>
+{% endif %}	
 
 <p>
 	<h3>Znajomi</h3><br />
+
+{% if  user.get_profile.count_friends != 0 %}
+
+	{% for i in user.get_profile.get_friends %}
+		<table><tr>
+		<td><img src="/media/{{i.inviter.get_profile.avatar_image}}" /></td>
+		<td>
+			<h4><a href ="/profile/user/{{i.inviter.user.username}}">{{i.inviter.user.username}}</a></h4><br />
+			<i>{{i.inviter.user.first_name}} {{i.inviter.user.first_last}}</i>
+		</td>
+		<td style="vertical-align: middle;">
+		</td>	
+		<td style="vertical-align: middle;">
+			<a style="color: purple;" href="/profile/invitation/{{i.id}}/delete" >Usuń</a>
+		</td>			
+		</tr></table>
+	{% endfor %}
+{% endif %}
+{% if user.get_profile.count_friends == 0 %}
+<i>brak</i>
+{% endif %}	
 </p>
 {% endblock %}

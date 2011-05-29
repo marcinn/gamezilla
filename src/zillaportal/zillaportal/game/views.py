@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*
+
 import urlparse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
