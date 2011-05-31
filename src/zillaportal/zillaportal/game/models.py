@@ -31,9 +31,9 @@ STATUS_CHOICES = (
 )
 
 class Gameplay(models.Model):
-    created_at = models.DateTimeField()
-    started_at = models.DateTimeField()
-    end_at =  models.DateTimeField()
+    created_at = models.DateTimeField(default=datetime.datetime.now)
+    started_at = models.DateTimeField(null=True, blank=True)
+    end_at =  models.DateTimeField(null=True, blank=True)
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
     owner = models.ForeignKey(User,  related_name='owned_games')
     player = models.ManyToManyField(User, related_name='playing_game')

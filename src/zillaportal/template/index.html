@@ -19,6 +19,7 @@
         <div id="menu">    
             {% block menu %}
             <a href="/game">Dostępne Gry</a>
+            <a href="/game/active/">Lista rozgrywek</a>
             {% if user.is_authenticated %}
             <a href="/profile">Profil [{{user.username}}]</a>
             {% endif %}

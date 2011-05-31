@@ -3,7 +3,7 @@
 import urlparse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from models import Game
+from models import Game, Gameplay
 
 
 def index(request):
@@ -16,3 +16,9 @@ def gamelist(request):
 	
 	return render_to_response('game.html', {'games' : games}, context_instance=RequestContext(request))
 
+
+def gameplays(request):
+	list_games = Gameplay.objects.order_by('created_at')
+	image = Game.objects
+	
+	return render_to_response('game/list.html', {'list' : list_games}, context_instance=RequestContext(request))
