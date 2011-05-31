@@ -4,7 +4,7 @@
 
 {% block content %}
 <div>
-	<img src="/media/{{user.get_profile.avatar_image}}" /></div><br />
+	<img src="{{user.get_profile.get_avatar}}" /></div><br />
 <div>
 	<form method="POST" enctype="multipart/form-data" action="/profile/" >
 	{{ uploadavatar.as_p }}
@@ -42,7 +42,7 @@
 <p>
 	{% for i in user.get_profile.get_invitations %}
 		<table><tr>
-		<td><img src="/media/{{i.inviter.get_profile.avatar_image}}" /></td>
+		<td><img src="{{i.inviter.get_profile.avatar_image}}" /></td>
 		<td>
 			<h4><a href ="/profile/user/{{i.inviter.user.username}}">{{i.inviter.user.username}}</a></h4><br />
 			<i>{{i.inviter.user.first_name}} {{i.inviter.user.first_last}}</i>
@@ -65,7 +65,7 @@
 
 	{% for i in user.get_profile.get_friends %}
 		<table><tr>
-		<td><img src="/media/{{i.inviter.get_profile.avatar_image}}" /></td>
+		<td><img src="{{i.inviter.get_profile.avatar_image}}" /></td>
 		<td>
 			<h4><a href ="/profile/user/{{i.inviter.user.username}}">{{i.inviter.user.username}}</a></h4><br />
 			<i>{{i.inviter.user.first_name}} {{i.inviter.user.first_last}}</i>

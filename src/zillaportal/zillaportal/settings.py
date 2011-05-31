@@ -116,3 +116,5 @@ AUTH_PROFILE_MODULE = "userprofile.Profile"
 
 
 AVATAR_MAX_SIZE = 1024*1024*256 			# 25kB
+
+NONE_IMG = '/static/images/none.png'

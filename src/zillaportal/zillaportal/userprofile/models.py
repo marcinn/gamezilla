@@ -4,7 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models.signals import post_save
-
+import settings
 
 
 MSG_STATUS = (
@@ -115,6 +115,15 @@ class Profile(models.Model):
 	def remove_friend (self, user):
  		if user in my_friends.all():
 			self.my_friends.remove(user)
+	
+	def get_avatar(self):
+		try:
+			open ( "%s/%s" % (settings.MEDIA_ROOT, self.avatar_image) )
+			return '/media/%s' % self.avatar_image		
+		except IOError:
+			print settings.NONE_IMG
+			return settings.NONE_IMG
+			
 			
 	def count_firends(self):
 		return self.my_friends.count()
