@@ -19,6 +19,5 @@ def gamelist(request):
 
 def gameplays(request):
 	list_games = Gameplay.objects.order_by('created_at')
-	image = Game.objects
 	
 	return render_to_response('game/list.html', {'list' : list_games}, context_instance=RequestContext(request))
