@@ -9,5 +9,6 @@ urlpatterns = patterns('game.views',
     (r'^$', 'gamelist'),
     (r'^active/$', 'gameplays'),
     (r'^details/(?P<game_id>\d{1,10})$', 'game_detail'),
+    (r'^user/(?P<username>\w{1,20})/game/(?P<game_id>\d{1,10})$', 'user_gameplays'),
 )
 

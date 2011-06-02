@@ -60,4 +60,23 @@
 <i>brak</i>
 {% endif %}	
 </p>
+
+<p>
+	<h3>Ranking</h3><br />
+
+	{% for i in userprofile.ranging_positions.all %}
+		<table><tr>
+		<td><img src="{{i.game.screenshot}}" style="height: 75px; width: 75px;" /></td>
+		<td>
+			<h4><a href ="/profile/user/{{i.player.username}}">{{i.inviter.user.username}}</a></h4><br />
+			<i>{{i.inviter.user.first_name}} {{i.inviter.user.first_last}}</i>
+		</td>
+		<td style="vertical-align: middle;">
+			<span style="font-size: 16px; font-weight: bold;">{{i.score}} (W: {{i.win}}, P: {{i.lost}}, R: {{i.draw}})</span><br />
+			<a href="/game/user/{{userprofile.username}}/game/{{i.game.id}}">lista gier</a>
+		</td>				
+		</tr></table>
+	{% endfor %}
+
+</p>
 {% endblock %}

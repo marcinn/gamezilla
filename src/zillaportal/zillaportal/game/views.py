@@ -4,6 +4,8 @@ import urlparse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from models import Game, Gameplay
+from django.contrib.auth.models import User
+from django.db.models import Q
 
 from django.shortcuts import get_object_or_404
 
@@ -19,9 +21,18 @@ def gamelist(request):
 
 
 def gameplays(request):
-	list_games = Gameplay.objects.order_by('created_at')
+	list_games = Gameplay.objects.filter(~Q(status='F')).order_by('created_at')
 	
 	return render_to_response('game/list.html', {'list' : list_games}, context_instance=RequestContext(request))
+	
+def user_gameplays (request, username, game_id):
+	
+	 user = get_object_or_404 (User, username=username)
+	 game = get_object_or_404 (Game, pk=game_id)
+	 
+	 list_games = Gameplay.get_by_user_and_game (user, game)
+	 
+	 return render_to_response('game/user_gameplays.html', {'list' : list_games, 'player': user, 'game': game}, context_instance=RequestContext(request))
 
 def create_game(request):
 	games = Game.objects

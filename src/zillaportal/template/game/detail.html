@@ -28,13 +28,13 @@
 	<tr>
 		<td></td>
 		<td><b><center>Gracz</center></b></td>
-		<td style="width: 60px;"><b><center>Wynik</center></b></td>
+		<td ><b><center>Wynik</center></b></td>
 	</tr>
 	{% for rank in game.get_top_ten %}
 	<tr>
 		<td style=" vertical-align: middle; " ><span style="margin-right: 10px; font-weight: bold; font-size: 14px; color: grey;">{{forloop.counter}}.</td>
 		<td><a href="/profile/user/{{rank.player.username}}"><span><img src="{{rank.player.get_profile.get_avatar}}" title="{{rank.player.username}}" /> </span></a></td>
-		<td style="width: 60px; vertical-align: middle"> <center><span style="font-weight: bold; font-size: 16px;">{{rank.score}}</span></center></td>
+		<td style="vertical-align: middle"> <center><span style="font-weight: bold; font-size: 16px;">{{rank.score}} (W: {{rank.win}}, P: {{rank.lost}}, R: {{rank.draw}})</span></center></td>
 	</tr>
 	{% endfor %}
 	
