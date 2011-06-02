@@ -25,9 +25,9 @@ class Game(models.Model):
     
 
 STATUS_CHOICES = (
-('S', 'Started'),
-('W', 'Waiting for players'),
-('F', 'Game finished'),
+('S', 'Rozpoczęta'),
+('W', 'Oczekuje na graczy'),
+('F', 'Zakończona'),
 )
 
 class Gameplay(models.Model):

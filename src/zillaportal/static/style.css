@@ -29,11 +29,14 @@ a {
 		background:#ffffff;
 	}
 #logo {
-		background:url(images/logo.jpg) no-repeat;
+		background:url(images/logo.gif) no-repeat #e5e5e5;
+		background-position:center;
+		#background-color: grey;
 		width:90%;
 		height:150px;
 		border:solid #818181 1px;
 		margin-top:10px;
+		
 	}
 #menu {
 		max-width:90%;

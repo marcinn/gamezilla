@@ -19,8 +19,8 @@
 {% if active.status != "F" %}
 	<tr> 
 		<td align="center" width="20%"><a href="/media/{{ active.game.screenshot }}" target="_blank"><img src="/media/{{ active.game.screenshot }}" width="50" height="50"></a><br></td>
-		<td align="center" width="15%"><font size="2px">{{ active.get_status_display }}</font></td> 
-		<td align="center" width="15%"><font size="2px">{{ active.owner }}</font></td>	
+		<td align="center" width="15%"><font size="2px">{% if active.status == "S" %}<font color="green">{% else %}{% if active.status == "W" %}<font color="red">{% endif %}{% endif %}{{ active.get_status_display }}</font></font></td> 
+		<td align="center" width="15%"><font size="2px"><a href="/profile/user/{{ active.owner }}">{{ active.owner }}</a></font></td>	
 		<td align="center" width="10%"><font size="2px">{{ active.created_at }}</font></td> 
 		<td align="center" width="10%"><font size="2px">{{ active.started_at }}</font></td>
 		<td align="center" width="10%"><font size="2px">{{ active.end_at }}</font></td> 

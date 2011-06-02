@@ -21,3 +21,7 @@ def gameplays(request):
 	list_games = Gameplay.objects.order_by('created_at')
 	
 	return render_to_response('game/list.html', {'list' : list_games}, context_instance=RequestContext(request))
+
+def create_game(request):
+	games = Game.objects
+	

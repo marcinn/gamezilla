@@ -65,7 +65,7 @@
 
 	{% for i in user.get_profile.get_friends %}
 		<table><tr>
-		<td><img src="{{i.inviter.get_profile.avatar_image}}" /></td>
+		<td><img src="{{i.inviter.get_avatar}}" /></td>
 		<td>
 			<h4><a href ="/profile/user/{{i.inviter.user.username}}">{{i.inviter.user.username}}</a></h4><br />
 			<i>{{i.inviter.user.first_name}} {{i.inviter.user.first_last}}</i>
