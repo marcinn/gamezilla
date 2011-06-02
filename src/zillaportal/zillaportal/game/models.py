@@ -9,18 +9,21 @@ import datetime
 
 
 class Game(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.TextField()
-    screenshot = models.ImageField(upload_to='images/games', null=True, blank=True)
-    games_count = models.IntegerField()
-    #client = wtf?
-    #gameserver = wtf?
+	title = models.CharField(max_length=200)
+	description = models.TextField()
+	screenshot = models.ImageField(upload_to='images/games', null=True, blank=True)
+	games_count = models.IntegerField()
+	#client = wtf?
+	#gameserver = wtf?
     
-    def __unicode__(self):
-        return self.title
+	def __unicode__(self):
+		return self.title
 
-    def get_active_gameplays(self):
-        return self.gameplays.filter(status='S')
+	def get_active_gameplays(self):
+		return self.gameplays.filter(status='S')
+        
+	def get_top_ten(self):
+		return self.rankings.order_by ('-score')[:10]
 
     
 
@@ -61,5 +64,9 @@ class Gameplay(models.Model):
 
 
 class Ranking(models.Model):
-    score = models.IntegerField()
+	score = models.IntegerField()
+	player = models.ForeignKey(User, related_name='ranging_position')
+	game = models.ForeignKey(Game, related_name='rankings')
 
+	def __unicode__ (self):
+		return self.player.username + " " + str(self.score)

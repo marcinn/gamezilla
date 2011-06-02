@@ -7,7 +7,7 @@
 <center><table border="0" width="100%" style="height: 100px">
 {% for game in games %}
 	<tr>
-		<td align="left"><b><font size="4">{{ game.title }}</font></b></td>
+		<td align="left"><b><font size="4"><a href="/game/details/{{game.id}}">{{ game.title }}</a></font></b></td>
 	</tr>
 	<tr>	
 		<td align="left" width=150><a href="/media/{{ game.screenshot }}" target="_blank"><img src="/media/{{ game.screenshot }}" width="100" height="100"></a><br>
