@@ -13,6 +13,7 @@ class Game(models.Model):
 	description = models.TextField()
 	screenshot = models.ImageField(upload_to='images/games', null=True, blank=True)
 	games_count = models.IntegerField()
+	max_players =  models.IntegerField()
 	#client = wtf?
 	#gameserver = wtf?
     
@@ -40,6 +41,7 @@ class Gameplay(models.Model):
 	status = models.CharField(max_length=1, choices=STATUS_CHOICES)
 	owner = models.ForeignKey(User,  related_name='owned_games')
 	player = models.ManyToManyField(User, related_name='playing_game')
+	observer = models.ManyToManyField(User, related_name='warching_game')
 	game = models.ForeignKey(Game, related_name='gameplays')
 	winner = models.ForeignKey(User,  related_name='win_games', null=True, blank=True)
 

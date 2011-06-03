@@ -56,14 +56,26 @@ def start_game(request, game_id):
 	return gameplays(request)
 	
 def join_game(request, game_id):
-	game = get_object_or_404(Gameplay, id=game_id)
-	game.player.add(request.user)
+	
+	gameplay = get_object_or_404(Gameplay, id=game_id)
+	if request.user not in game.player and equest.user not in game.observer:
+		if gameplay.game.max_players > game.player.count():
+			game.player.add(request.user)
+		
+	return gameplays(request)
+	
+def watch_game (request, game_id):
+	
+	if request.user not in game.player and equest.user not in game.observer:
+		game = get_object_or_404(Gameplay, id=game_id)
+		game.overver.add(request.user)
 		
 	return gameplays(request)
 	
 def leave_game(request, game_id):
 	game = get_object_or_404(Gameplay, id=game_id)
 	game.player.remove(request.user)
+	game.observer.remove(request.user)
 		
 	return gameplays(request)
 	
