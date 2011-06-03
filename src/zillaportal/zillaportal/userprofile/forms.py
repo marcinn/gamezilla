@@ -36,8 +36,8 @@ class RegisterForm(UserCreationForm):
 		if commit:
 			user.save()
 		
-		user.get_proflie().avatar = avatar
-		user.get_proflie().save()
+		user.get_profile().avatar = avatar
+		user.get_profile().save()
 		
 		return user
 
