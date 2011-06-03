@@ -1,14 +1,43 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+
+{% extends "index.html" %}
+{% load i18n %}
+ 
+ 
+{% block content %}
+
+
+<center><table border="0" width="100%" style="height: 100px">
+	<tr>
+		<td align="left"><b><font size="4"><a href="/game/details/{{game.id}}">{{ game.title }}</a></font></b></td>
+	</tr>
+	<tr>	
+		<td align="left" width=150><a href="/media/{{ game.screenshot }}" target="_blank"><img src="/media/{{ game.screenshot }}" width="100" height="100"></a><br>
+		<font size="2px">Ilośc rozegranych: {{ game.games_count }}</font></td>
+		<td align="left" valign="top" width=><font size="2px">{{ game.description }}</font></td>	
+	</tr>
+	<tr height="50">
+	</tr>
+</table></center>
+
+<hr />
+<h3>Top 10</h3>
+<hr />
+<br />
+
+<table>
+	<tr>
+		<td></td>
+		<td><b><center>Gracz</center></b></td>
+		<td ><b><center>Wynik</center></b></td>
+	</tr>
+	{% for rank in game.get_top_ten %}
+	<tr>
+		<td style=" vertical-align: middle; " ><span style="margin-right: 10px; font-weight: bold; font-size: 14px; color: grey;">{{forloop.counter}}.</td>
+		<td><a href="/profile/user/{{rank.player.username}}"><span><img src="{{rank.player.get_profile.get_avatar}}" title="{{rank.player.username}}" /> </span></a></td>
+		<td style="vertical-align: middle"> <center><span style="font-weight: bold; font-size: 16px;">{{rank.score}} (W: {{rank.win}}, P: {{rank.lost}}, R: {{rank.draw}})</span></center></td>
+	</tr>
+	{% endfor %}
+	
+</table>	
+
+{% endblock %}

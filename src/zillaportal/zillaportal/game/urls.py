@@ -10,5 +10,7 @@ urlpatterns = patterns('game.views',
     (r'^active/$', 'gameplays'),
     (r'^active/join/(?P<id>\d{1,10})$', 'join_game'),
 	(r'^active/leave/(?P<id>\d{1,10})$', 'leave_game'),
+    (r'^details/(?P<game_id>\d{1,10})$', 'game_detail'),
+    (r'^user/(?P<username>\w{1,20})/game/(?P<game_id>\d{1,10})$', 'user_gameplays'),
 )
 

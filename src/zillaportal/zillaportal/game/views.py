@@ -5,7 +5,12 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from models import Game, Gameplay
 from django.contrib.auth.models import User
+<<<<<<< HEAD
+=======
+from django.db.models import Q
+>>>>>>> 5841a18ba03982da14308aa03200513594ae31cf
 
+from django.shortcuts import get_object_or_404
 
 def index(request):
 
@@ -15,11 +20,11 @@ def index(request):
 def gamelist(request):
 	games = Game.objects.order_by('title')
 	
-	return render_to_response('game.html', {'games' : games}, context_instance=RequestContext(request))
+	return render_to_response('game/gamelist.html', {'games' : games}, context_instance=RequestContext(request))
 
 
 def gameplays(request):
-	list_games = Gameplay.objects.order_by('created_at')
+	list_games = Gameplay.objects.filter(~Q(status='F')).order_by('created_at')
 	
 	try:
 		player = list_games.objects.get (username = request.user.username)
@@ -29,9 +34,19 @@ def gameplays(request):
 	
 	
 	return render_to_response('game/list.html', {'list' : list_games, 'player' : player}, context_instance=RequestContext(request))
+	
+def user_gameplays (request, username, game_id):
+	
+	 user = get_object_or_404 (User, username=username)
+	 game = get_object_or_404 (Game, pk=game_id)
+	 
+	 list_games = Gameplay.get_by_user_and_game (user, game)
+	 
+	 return render_to_response('game/user_gameplays.html', {'list' : list_games, 'player': user, 'game': game}, context_instance=RequestContext(request))
 
 def create_game(request):
 	games = Game.objects
+	
 	
 def join_game(request, id):
 	game = Gameplay.objects.get(pk=id)
@@ -46,4 +61,10 @@ def leave_game(request, id):
 	return render_to_response('game/leave.html', context_instance=RequestContext(request))
 	
 	
+
+def game_detail (request, game_id):
+	
+	game = get_object_or_404 (Game, id=game_id)
+	
+	return render_to_response('game/detail.html', {'game' : game}, context_instance=RequestContext(request))
 
