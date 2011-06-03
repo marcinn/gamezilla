@@ -8,28 +8,31 @@
 {% if   list.count != 0 %}
 	<center><table border="0" width="100%" style="height: 100px"> 
 		<tr> 
-			<td align="center" valign="middle" width="20%"><b><font size="2px"><b>Gra</b></font></b></td>
-			<td align="center" valign="middle" width="15%"><font size="2px"><b>Status gry</b></font></td> 
-			<td align="center" valign="middle" width="15%"><font size="2px"><b>Właściciel</b></font></td>	
-			<td align="center" valign="middle" width="10%"><font size="2px"><b>Utworzona</b></font></td> 
-			<td align="center" valign="middle" width="10%"><font size="2px"><b>Rozpoczęta</b></font></td>
-			<td align="center" valign="middle" width="10%"><font size="2px">Akcje</font></td>  
+			<td align="center" valign="middle" width="20%"><b><font size="2px"><b><a href="/game/active/game">Gra</a></b></font></b></td>
+			<td align="center" valign="middle" width="15%"><font size="2px"><b><a href="/game/active/status">Status gry</a></b></font></td> 
+			<td align="center" valign="middle" width="15%"><font size="2px"><b><a href="/game/active/owner">Właściciel</a></b></font></td>	
+			<td align="center" valign="middle" width="10%"><font size="2px"><b><a href="/game/active/created_at">Utworzona</a></b></font></td> 
+			<td align="center" valign="middle" width="10%"><font size="2px"><b><a href="/game/active/started_at">Rozpoczęta</a></b></font></td>
+			<td align="center" valign="middle" width="10%"><font size="2px"><b>Akcje</b></font></td>  
 			<td align="center" valign="middle" width="20%"><font size="2px"><b>Gracze</b></font></td>		
 		</tr> 
 	{% for active in list %}
 		<tr> 
 			<td align="center" width="20%"><a href="/media/{{ active.game.screenshot }}" target="_blank"><img src="/media/{{ active.game.screenshot }}" width="50" height="50"></a><br></td>
-			<td align="center" width="15%"><font size="2px">{% if active.status == "S" %}<font color="green">{% else %}{% if active.status == "W" %}<font color="red">{% endif %}{% endif %}{{ active.get_status_display }}</font></font></td> 
+			<td align="center" width="15%"><font size="2px">{% if active.status == "R" %}<font color="green">{% else %}{% if active.status == "O" %}<font color="red">{% endif %}{% endif %}{{ active.get_status_display }}</font></font></td> 
 			<td align="center" width="15%"><font size="2px"><a href="/profile/user/{{ active.owner }}">{{ active.owner }}</a></font></td>	
 			<td align="center" width="10%"><font size="2px">{{ active.created_at }}</font></td> 
 			<td align="center" width="10%"><font size="2px">{{ active.started_at }}</font></td>
 					<td align="center" width="10%"><font size="2px">
 			{% if user.is_authenticated %}
-				{% if active.status == "W" %}
+				{% if active.status == "O" %}
 					{% if user in active.player.all %}
 						<a href="/game/active/leave/{{ active.pk }}"><font color="red">Wyjdź</font></a>
 					{% else %}
 						<a href="/game/active/join/{{ active.pk }}"><font color="green">Dołącz</font></a>
+					{% endif %}
+					{% if active.owner = user %}
+						<br><a href="/game/active/start/{{ active.pk }}"><font color="green">Start gry</font></a>
 					{% endif %}
 				{% endif %}
 			{% endif %}

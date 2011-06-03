@@ -28,9 +28,9 @@ class Game(models.Model):
     
 
 STATUS_CHOICES = (
-('S', 'Rozpoczęta'),
-('W', 'Oczekuje na graczy'),
-('F', 'Zakończona'),
+('R', 'Rozpoczęta'),
+('O', 'Oczekuje na graczy'),
+('Z', 'Zakończona'),
 )
 
 class Gameplay(models.Model):
@@ -52,12 +52,12 @@ class Gameplay(models.Model):
 		return name
 
 	def start(self):
-		self.status = "S"
+		self.status = "R"
 		self.started_at = datetime.datetime.now()
 		self.save()
 
 	def finish(self):
-		self.status = "F"
+		self.status = "Z"
 		self.end_at = datetime.datetime.now()
 		self.save()
 

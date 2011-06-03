@@ -6,6 +6,7 @@ from django.template import RequestContext
 from models import Game, Gameplay
 from django.contrib.auth.models import User
 from django.db.models import Q
+from datetime import datetime  
 
 
 from django.shortcuts import get_object_or_404
@@ -21,8 +22,10 @@ def gamelist(request):
 	return render_to_response('game/gamelist.html', {'games' : games}, context_instance=RequestContext(request))
 
 
-def gameplays(request):
-	list_games = Gameplay.objects.filter(~Q(status='F')).order_by('created_at')
+def gameplays(request, sort='status'):
+	sort='-' + sort
+	print sort
+	list_games = Gameplay.objects.filter(~Q(status='F')).order_by(sort)
 	
 	return render_to_response('game/list.html', {'list' : list_games}, context_instance=RequestContext(request))
 	
@@ -35,21 +38,34 @@ def user_gameplays (request, username, game_id):
 	 
 	 return render_to_response('game/user_gameplays.html', {'list' : list_games, 'player': user, 'game': game}, context_instance=RequestContext(request))
 
-def create_game(request):
-	games = Game.objects
+def create_game(request, game_id):
+	new = get_object_or_404(Game, id=game_id)
+	new_game = Gameplay(game=new, owner = request.user, status='W')
+	new_game.save()
+	new_game.player.add(request.user)
 	
+	return gameplays(request)
 	
-def join_game(request, id):
-	game = Gameplay.objects.get(pk=id)
+def start_game(request, game_id):
+	game = get_object_or_404(Gameplay, id=game_id)
+	if request.user == game.owner:
+		game.status = 'R'
+		game.started_at = datetime.now()
+		game.save()
+	
+	return gameplays(request)
+	
+def join_game(request, game_id):
+	game = get_object_or_404(Gameplay, id=game_id)
 	game.player.add(request.user)
 		
-	return render_to_response('game/join.html', context_instance=RequestContext(request))
+	return gameplays(request)
 	
-def leave_game(request, id):
-	game = Gameplay.objects.get(pk=id)
+def leave_game(request, game_id):
+	game = get_object_or_404(Gameplay, id=game_id)
 	game.player.remove(request.user)
 		
-	return render_to_response('game/leave.html', context_instance=RequestContext(request))
+	return gameplays(request)
 	
 	
 
