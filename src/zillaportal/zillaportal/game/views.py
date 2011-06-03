@@ -25,7 +25,7 @@ def gamelist(request):
 def gameplays(request, sort='status'):
 	sort='-' + sort
 	print sort
-	list_games = Gameplay.objects.filter(~Q(status='F')).order_by(sort)
+	list_games = Gameplay.objects.filter(~Q(status='Z')).order_by(sort)
 	
 	return render_to_response('game/list.html', {'list' : list_games}, context_instance=RequestContext(request))
 	
@@ -40,7 +40,7 @@ def user_gameplays (request, username, game_id):
 
 def create_game(request, game_id):
 	new = get_object_or_404(Game, id=game_id)
-	new_game = Gameplay(game=new, owner = request.user, status='W')
+	new_game = Gameplay(game=new, owner = request.user, status='O')
 	new_game.save()
 	new_game.player.add(request.user)
 	
