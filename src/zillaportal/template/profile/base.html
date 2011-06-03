@@ -88,7 +88,7 @@
 
 	{% for i in user.ranging_positions.all %}
 		<table><tr>
-		<td><img src="{{i.game.screenshot}}" style="height: 75px; width: 75px;" /></td>
+		<td><img src="/media/{{i.game.screenshot}}" style="height: 75px; width: 75px;" /></td>
 		<td>
 			<h4><a href ="/profile/user/{{i.player.username}}">{{i.inviter.user.username}}</a></h4><br />
 			<i>{{i.inviter.user.first_name}} {{i.inviter.user.first_last}}</i>

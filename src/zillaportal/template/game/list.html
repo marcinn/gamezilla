@@ -26,17 +26,16 @@
 					<td align="center" width="10%"><font size="2px">
 			{% if user.is_authenticated %}
 				{% if active.status == "W" %}
-					{% if player %}
-						<a href="/game/active/join/{{ active.pk }}"><font color="green">Dołącz</font></a>
-					{% else %}
-					{% if player == False %}
+					{% if user in active.player.all %}
 						<a href="/game/active/leave/{{ active.pk }}"><font color="red">Wyjdź</font></a>
+					{% else %}
+						<a href="/game/active/join/{{ active.pk }}"><font color="green">Dołącz</font></a>
 					{% endif %}
 				{% endif %}
 			{% endif %}
 				</font></td>	
 			<td align="center" width="20%"><font size="2px">
-			{% if  user in active.player.all.count != 0 %}
+			{% if active.player.all.count != 0 %}
 				{% for user in active.player.all %}			
 					{% if active.winner = user %}
 						<a href="/profile/user/{{ user.username }}">{{ user.username }} (<span style="color: green">*</span>)</a> <br>

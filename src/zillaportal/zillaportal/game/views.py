@@ -5,10 +5,8 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from models import Game, Gameplay
 from django.contrib.auth.models import User
-<<<<<<< HEAD
-=======
 from django.db.models import Q
->>>>>>> 5841a18ba03982da14308aa03200513594ae31cf
+
 
 from django.shortcuts import get_object_or_404
 
@@ -26,14 +24,7 @@ def gamelist(request):
 def gameplays(request):
 	list_games = Gameplay.objects.filter(~Q(status='F')).order_by('created_at')
 	
-	try:
-		player = list_games.objects.get (username = request.user.username)
-	except User.DoesNotExist:
-		player = False
-	
-	
-	
-	return render_to_response('game/list.html', {'list' : list_games, 'player' : player}, context_instance=RequestContext(request))
+	return render_to_response('game/list.html', {'list' : list_games}, context_instance=RequestContext(request))
 	
 def user_gameplays (request, username, game_id):
 	
