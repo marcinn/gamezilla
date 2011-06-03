@@ -66,9 +66,10 @@ def join_game(request, game_id):
 	
 def watch_game (request, game_id):
 	
+	gameplay = get_object_or_404(Gameplay, id=game_id)
 	if request.user not in game.player and equest.user not in game.observer:
-		game = get_object_or_404(Gameplay, id=game_id)
-		game.overver.add(request.user)
+		if gameplay.status != "F":
+			gameplay.observer.add(request.user)
 		
 	return gameplays(request)
 	

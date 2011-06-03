@@ -60,6 +60,7 @@ class Gameplay(models.Model):
 
 	def finish(self):
 		self.status = "Z"
+		self.observer.clear()
 		self.end_at = datetime.datetime.now()
 		self.save()
 
