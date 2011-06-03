@@ -12,8 +12,8 @@
 		<td align="center" valign="middle" width="15%"><font size="2px">Właściciel</font></td>	
 		<td align="center" valign="middle" width="10%"><font size="2px">Utworzona</font></td> 
 		<td align="center" valign="middle" width="10%"><font size="2px">Rozpoczęta</font></td>
-		<td align="center" valign="middle" width="10%"><font size="2px">Zakończona</font></td> 
-		<td align="center" valign="middle" width="20%"><font size="2px">Gracze</font></td>		
+		<td align="center" valign="middle" width="20%"><font size="2px">Gracze</font></td>	
+		<td align="center" valign="middle" width="10%"><font size="2px">Akcje</font></td> 			
 	</tr> 
 {% for active in list %}
 {% if active.status != "F" %}
@@ -23,12 +23,23 @@
 		<td align="center" width="15%"><font size="2px"><a href="/profile/user/{{ active.owner }}">{{ active.owner }}</a></font></td>	
 		<td align="center" width="10%"><font size="2px">{{ active.created_at }}</font></td> 
 		<td align="center" width="10%"><font size="2px">{{ active.started_at }}</font></td>
-		<td align="center" width="10%"><font size="2px">{{ active.end_at }}</font></td> 
 		<td align="center" width="20%"><font size="2px">
 		{% for user in active.player.all %}
 		<a href="/profile/user/{{ user.username }}">{{ user.username }}</a> <br>
 		{% endfor %}
-		</font></td>		
+				</font></td>
+		<td align="center" width="10%"><font size="2px">
+			{% if user.is_authenticated %}
+				{% if active.status == "W" %}
+					{% if player %}
+						<a href="/game/active/join/{{ active.pk }}"><font color="green">Dołącz</font></a>
+					{% else %}
+					{% if player == False %}
+						<a href="/game/active/leave/{{ active.pk }}"><font color="red">Wyjdź</font></a>
+					{% endif %}
+				{% endif %}
+			{% endif %}
+				</font></td>		
 	</tr> 
 {% endif %}
 {% endfor %}

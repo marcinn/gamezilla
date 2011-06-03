@@ -7,6 +7,8 @@ urlpatterns = patterns('game.views',
 
     # Uncomment the admin/doc line below to enable admin documentation:
     (r'^$', 'gamelist'),
-    (r'^active/$', 'gameplays')
+    (r'^active/$', 'gameplays'),
+    (r'^active/join/(?P<id>\d{1,10})$', 'join_game'),
+	(r'^active/leave/(?P<id>\d{1,10})$', 'leave_game'),
 )
 
