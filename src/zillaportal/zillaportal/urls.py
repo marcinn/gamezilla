@@ -10,8 +10,8 @@ urlpatterns = patterns('',
     # (r'^zillaportal/', include('zillaportal.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    (r'^$', 'game.views.index'),
-    (r'^index/$', 'game.views.index'),
+    (r'^$', 'game.views.gamelist'),
+    (r'^index/$', 'game.views.gamelist'),
 
     (r'^game/', include('game.urls')),
 
