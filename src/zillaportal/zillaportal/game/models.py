@@ -84,7 +84,7 @@ class Ranking(models.Model):
 	draw = models.IntegerField(default=0)
 
 	def __unicode__ (self):
-		return self.player.username + " " + str(self.score)
+		return self.player.username + " " +  game.title + " " + str(self.score)
 		
 	@staticmethod
 	def get_player_rankig (player, game):
