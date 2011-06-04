@@ -39,6 +39,7 @@ class RegisterForm(UserCreationForm):
 		prof = user.get_profile()
 		prof.avatar = avatar
 		prof.save()
+
 		
 		return user
 
