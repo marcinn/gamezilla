@@ -33,7 +33,7 @@
 						{% if active.game.max_players > active.players.count %}
 							<a href="/game/active/join/{{ active.pk }}"><font color="green">Dołącz</font></a>
 						{% endif %}
-							<a href="/game/active/join/{{ active.pk }}"><font color="blue">Obserwuj</font></a>
+							<a href="/game/active/watch/{{ active.pk }}"><font color="blue">Obserwuj</font></a>
 					{% endif %}
 					{% if active.owner = user %}
 						<br><a href="/game/active/start/{{ active.pk }}"><font color="green">Start gry</font></a>
