@@ -35,11 +35,11 @@
 						{% endif %}
 							
 					{% endif %}
-					<a href="/game/active/watch/{{ active.pk }}"><font color="blue">Obserwuj</font></a>
 					{% if active.owner = user %}
 						<br><a href="/game/active/start/{{ active.pk }}"><font color="green">Start gry</font></a>
 					{% endif %}
 				{% endif %}
+				<a href="/game/active/watch/{{ active.pk }}"><font color="blue">Obserwuj</font></a>
 			{% endif %}
 				</font></td>	
 			<td align="center" width="20%"><font size="2px">
