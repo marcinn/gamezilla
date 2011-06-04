@@ -19,7 +19,7 @@
 		</tr> 
 	{% for active in list %}
 		<tr> 
-			<td align="center" width="20%"><a href="/media/{{ active.game.screenshot }}" target="_blank"><img src="/media/{{ active.game.screenshot }}" width="50" height="50"></a><br></td>
+			<td align="center" width="20%"><a href="/media/{{ active.game.screenshot }}" target="_blank"><img src="/media/{{ active.game.screenshot }}" width="50" height="50" title="{{ active.game.title }}"></a><br></td>
 			<td align="center" width="15%"><font size="2px">{% if active.status == "R" %}<font color="green">{% else %}{% if active.status == "O" %}<font color="red">{% endif %}{% endif %}{{ active.get_status_display }}</font></font></td> 
 			<td align="center" width="15%"><font size="2px"><a href="/profile/user/{{ active.owner }}">{{ active.owner }}</a></font></td>	
 			<td align="center" width="10%"><font size="2px">{{ active.created_at }}</font></td> 
