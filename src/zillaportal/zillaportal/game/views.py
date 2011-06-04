@@ -58,9 +58,9 @@ def start_game(request, game_id):
 def join_game(request, game_id):
 	
 	gameplay = get_object_or_404(Gameplay, id=game_id)
-	if request.user not in game.player and equest.user not in game.observer:
-		if gameplay.game.max_players > game.player.count():
-			game.player.add(request.user)
+	if request.user not in gameplay.player.all() and request.user not in gameplay.observer.all():
+		if gameplay.game.max_players > gameplay.player.count():
+			gameplay.player.add(request.user)
 		
 	return gameplays(request)
 	
